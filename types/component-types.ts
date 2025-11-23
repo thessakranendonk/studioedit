@@ -23,7 +23,7 @@ export interface HeaderProps {
   textClassName?: string;
   companyName?: string;
   companyNameClassName?: string;
-  logo?: string | undefined;
+  logo?: any | undefined;
   logoClassName?: string;
   alt?: string;
   onLinkClick?: () => void;

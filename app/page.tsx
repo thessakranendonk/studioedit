@@ -8,14 +8,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const metadata = {
   title: "Studio Edit",
-};
+}
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
       <ProjectLayout>
         {children}
         <ToastContainer />
-      </ProjectLayout>
- 
+      </ProjectLayout> 
   );
 }

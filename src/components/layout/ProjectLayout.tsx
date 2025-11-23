@@ -5,7 +5,7 @@ import { Content } from "./project-layout/Content";
 import Footer from "./project-layout/Footer";
 import Header from "./project-layout/Header";
 import { Wrapper } from "./project-layout/Wrapper";
-import logo from "./../../../public/images/logo.png";
+import logo from "@/public/images/logo.png";
 // const logo = require('@/public/images/logo.png')
 
 // import { useRouter } from "next/router";

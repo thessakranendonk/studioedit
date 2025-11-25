@@ -1,3 +1,4 @@
+'use client'
 import Button from "@/src/components/ui/inputs/Button";
 // import { snakeCaseToTitleCase } from "@/lib/functions";
 import { FooterProps, NavigationLink } from "../../../../types/component-types";
@@ -9,7 +10,7 @@ import {
   AiOutlineMenu,
   AiOutlinePhone,
 } from "react-icons/ai";
-// import LogoAnimation from "@/components/LogoAnimation";
+import LogoAnimation from "@/src/components/LogoAnimation";
 // import { CLINIC_DETAILS, HOURS } from "../../../../data/clinic-data";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineContactPhone } from "react-icons/md";
@@ -23,8 +24,7 @@ const LogoFooter = () => {
   return (
     <div className="h-full bg-brand-evenLighter flex justify-center w-full">
       <div className="relative my-auto">
-        {/* <LogoAnimation /> */}
-        logo
+        <LogoAnimation />
       </div>
     </div>
   );

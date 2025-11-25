@@ -1,10 +1,11 @@
+'use client';
 // import PatientTestimonials from "@/components/PatientTestimonials";
-// import LinkCard from "@/components/ui/LinkCard";
+import LinkCard from "@/src/components/ui/LinkCard";
 import { RiDoubleQuotesL, RiServiceFill, RiServiceLine } from "react-icons/ri";
 import { HiOfficeBuilding, HiOutlineOfficeBuilding } from "react-icons/hi";
 import { MdCamera, MdOutlineCamera } from "react-icons/md";
 // import DentalOffer from "@/components/DentalOffer";
-// import Hero from "@/components/Hero";
+import Hero from "@/src/components/Hero";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
@@ -12,26 +13,26 @@ import { useEffect, useState } from "react";
 const iconClassName = "w-24 h-24 text-brand-base";
 const HomePageLinks = [
   {
-    href: "/services",
-    name: "Services",
+    href: "/professional-creative-editing",
+    name: "Professional & Creative Editing",
     information:
-      "Our team at Richmond West Dental will carefully select the correct treatment for your needs.  The core of all of our services is to maintain your oral health to the highest standards.",
+      "",
     icon: <RiServiceLine className={iconClassName} />,
     hoverIcon: <RiServiceFill className={iconClassName} />,
   },
   {
-    href: "/technology-and-digital-dentistry",
-    name: "Technology",
+    href: "/Educational-editing",
+    name: "Educational Editing",
     information:
-      "The technology used at our office allows us to treat your dental needs with the highest quality and precision possible.",
+      "",
     icon: <MdOutlineCamera className={iconClassName} />,
     hoverIcon: <MdCamera className={iconClassName} />,
   },
   {
-    href: "/office-tour",
-    name: "Office",
+    href: "/phd-consultations",
+    name: "PhD Consultations",
     information:
-      "Our office is committed to Dental Excellence through maintaining a clean and immaculate environment as well as the most state of the art eulquipment.",
+      "",
     icon: <HiOutlineOfficeBuilding className={iconClassName} />,
     hoverIcon: <HiOfficeBuilding className={iconClassName} />,
   },
@@ -60,20 +61,20 @@ const Home: React.FC = () => {
   }, [controls, inView]);
   return (
     <div>
-      {/* <Hero /> */}
-      <ul className="flex flex-col md:flex-row md:justify-evenly lg:justify-center md: mt-12 lg:mt-24 md:mb-10">
+      <Hero />
+      <ul className="flex flex-col md:flex-row md:justify-evenly lg:justify-center md:mt-12 lg:mt-24 md:mb-10">
         {HomePageLinks.map((link) => (
           <div
             key={link.href}
-            className="h-[26rem] border-b-[1px] hover:border-none border-zinc-300 last:border-none md:border-none mx-10 pt-4"
+            className="h-[20rem] lg:border-b-[1px] hover:border-none border-zinc-300 last:border-none md:border-none mx-10 pt-4"
           >
-            {/* <LinkCard
+            <LinkCard
               href={link.href}
               name={link.name}
               icon={link.icon}
               hoverIcon={link.hoverIcon}
               information={link.information}
-            /> */}
+            />
           </div>
         ))}
       </ul>
@@ -90,7 +91,7 @@ const Home: React.FC = () => {
         ________________
       </p>
       <h1 className="text-center uppercase font-medium text-3xl xl:text-4xl mt-14 md:mt-24 tracking-widest text-zinc-700">
-        Patient Testimonials
+        Client Testimonials
       </h1>
       <div className="bg-zinc-200 relative mx-auto mt-24">
         <div className="relative max-w-md flex justify-center mx-auto">

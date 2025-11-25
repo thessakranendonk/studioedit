@@ -24,8 +24,8 @@ const ProjectLayout: React.FC<PropsWithChildren> = (
   const navigationLinks: Array<NavigationLink> = [
     { name: "SERVICES", href: "/services"},
     { name: "ABOUT US", href: "/about-us" },
-    { name: "NEW PATIENT FORM", href: "/new-patient-form" },
-    { name: "DENTAL RELEASE FORM", href: "/dental-release-form" },
+    { name: "INTAKE FORM", href: "/intake-form" },
+    // { name: "DENTAL RELEASE FORM", href: "/dental-release-form" },
 
   ];
 

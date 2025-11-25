@@ -1,4 +1,6 @@
 import { JSX } from "react";
+import { StaticImageData } from 'next/image';
+
 
 export interface NavigationLink {
   name: string;
@@ -42,8 +44,7 @@ export interface ButtonProps {
 
 export interface LinkCardProps {
   href: string;
-  icon: JSX.Element;
-  hoverIcon: JSX.Element;
+  image: string | StaticImageData;
   name: string;
   information: string;
 }

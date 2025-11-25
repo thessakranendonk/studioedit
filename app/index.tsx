@@ -2,39 +2,40 @@
 // import PatientTestimonials from "@/components/PatientTestimonials";
 import LinkCard from "@/src/components/ui/LinkCard";
 import { RiDoubleQuotesL, RiServiceFill, RiServiceLine } from "react-icons/ri";
-import { HiOfficeBuilding, HiOutlineOfficeBuilding } from "react-icons/hi";
-import { MdCamera, MdOutlineCamera } from "react-icons/md";
+// import { HiOfficeBuilding, HiOutlineOfficeBuilding } from "react-icons/hi";
+// import { MdCamera, MdOutlineCamera } from "react-icons/md";
 // import DentalOffer from "@/components/DentalOffer";
 import Hero from "@/src/components/Hero";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState } from "react";
+import image1 from '@/public/images/typewriter.jpg';
+import image2 from '@/public/images/closeup.jpg';
+import image3 from '@/public/images/computer.jpg'
 
 const iconClassName = "w-24 h-24 text-brand-base";
+
 const HomePageLinks = [
   {
     href: "/professional-creative-editing",
     name: "Professional & Creative Editing",
     information:
       "",
-    icon: <RiServiceLine className={iconClassName} />,
-    hoverIcon: <RiServiceFill className={iconClassName} />,
+    image: image1
   },
   {
     href: "/Educational-editing",
     name: "Educational Editing",
     information:
       "",
-    icon: <MdOutlineCamera className={iconClassName} />,
-    hoverIcon: <MdCamera className={iconClassName} />,
+    image: image2,
   },
   {
     href: "/phd-consultations",
     name: "PhD Consultations",
     information:
       "",
-    icon: <HiOutlineOfficeBuilding className={iconClassName} />,
-    hoverIcon: <HiOfficeBuilding className={iconClassName} />,
+    image: image3,
   },
 ];
 
@@ -66,13 +67,13 @@ const Home: React.FC = () => {
         {HomePageLinks.map((link) => (
           <div
             key={link.href}
-            className="h-[20rem] lg:border-b-[1px] hover:border-none border-zinc-300 last:border-none md:border-none mx-10 pt-4"
+            className="h-[26rem] lg:border-b-[1px] hover:border-none border-zinc-300 last:border-none md:border-none mx-10 pt-4"
           >
             <LinkCard
               href={link.href}
               name={link.name}
-              icon={link.icon}
-              hoverIcon={link.hoverIcon}
+              image={link.image}
+              // hoverIcon={link.hoverIcon}
               information={link.information}
             />
           </div>
@@ -87,7 +88,7 @@ const Home: React.FC = () => {
       >
         {/* <DentalOffer /> */}
       </motion.div>
-      <p className="text-center font-extrabold text-brand-base">
+      <p className="text-center font-extrabold text-brand-base mt-32">
         ________________
       </p>
       <h1 className="text-center uppercase font-medium text-3xl xl:text-4xl mt-14 md:mt-24 tracking-widest text-zinc-700">

@@ -3,7 +3,7 @@
 import HamburgerIcon from "@/src/components/ui/icons/HamburgerIcon";
 import Button from "@/src/components/ui/inputs/Button";
 import { HeaderProps } from "../../../../types/component-types";
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, PopoverPanel, PopoverButton, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
@@ -458,7 +458,7 @@ const Header: React.FC<HeaderProps> = ({
         <Popover className="lg:hidden">
           {({ open, close }) => (
             <>
-              <Popover.Button
+              <PopoverButton
                 className={clsx(
                   "flex px-6 mt-2",
                   "focus:outline-none focus:ring-1 focus-ring-inset focus:ring-black-100"
@@ -466,7 +466,7 @@ const Header: React.FC<HeaderProps> = ({
               >
                 <span className="sr-only">'open-navigation-menu'</span>
                 <HamburgerIcon />
-              </Popover.Button>
+              </PopoverButton>
 
               <Transition
                 as={Fragment}
@@ -477,7 +477,7 @@ const Header: React.FC<HeaderProps> = ({
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1"
               >
-                <Popover.Panel className="absolute left-1/2 z-50 mt-10 w-screen -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl bg-white border-y-[2px] shadow-xl">
+                <PopoverPanel className="absolute left-1/2 z-50 mt-10 w-screen -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl bg-white border-y-[2px] shadow-xl">
                   {({ close }) => (
                     <div>
                       <MenuLinks
@@ -490,7 +490,7 @@ const Header: React.FC<HeaderProps> = ({
                       />
                     </div>
                   )}
-                </Popover.Panel>
+                </PopoverPanel>
               </Transition>
             </>
           )}

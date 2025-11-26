@@ -1,12 +1,9 @@
-import { NavigationLink } from "../../../types/component-types";
+import { NavigationLink } from "../types/component-types";
 import clsx from "clsx";
 import { PropsWithChildren } from "react";
-import { Content } from "./project-layout/Content";
-import Footer from "./project-layout/Footer";
-import Header from "./project-layout/Header";
-import { Wrapper } from "./project-layout/Wrapper";
+import Footer from "../src/components/layout/project-layout/Footer";
+import Header from "../src/components/layout/project-layout/Header";
 import logo from "@/public/images/logo.png";
-// const logo = require('@/public/images/logo.png')
 
 // import { useRouter } from "next/router";
 // import { SERVICES_DROPDOWN } from "../../../data/services";
@@ -14,11 +11,8 @@ import logo from "@/public/images/logo.png";
 // import { FORMS_DROPDOWN } from "../../../data/form-dropdown";
 
 
+export default function ProjectLayout({ children }: { children: React.ReactNode }) {
 
-const ProjectLayout: React.FC<PropsWithChildren> = (
-  { children },
-
-) => {
 //   const location = useRouter();
 
   const navigationLinks: Array<NavigationLink> = [
@@ -30,7 +24,8 @@ const ProjectLayout: React.FC<PropsWithChildren> = (
   ];
 
   return (
-    <Wrapper>
+    <html lang="en">
+      <body>
        <Header 
          logo={logo}
          navigationLinks={navigationLinks}
@@ -43,10 +38,11 @@ const ProjectLayout: React.FC<PropsWithChildren> = (
          )}
          activeLinkClassName="text-brand-lightest font-normal lg:text-lg font-light"
     />
-        <Content>{children}</Content>
+        <main>{children}</main>
        <Footer logo={logo.src} navigationLinks={navigationLinks} />
-    </Wrapper>
+    </body>
+    </html>
   );
 };
 
-export { ProjectLayout };
+// export { ProjectLayout };

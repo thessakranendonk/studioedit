@@ -1,6 +1,5 @@
 import type { PropsWithChildren } from "react";
 import clsx from "clsx";
-import Home from '@/app/index';
 
 
 export interface ContentProps {
@@ -22,7 +21,6 @@ export const Content: React.FC<PropsWithChildren<ContentProps>> = ({
         extraClassName
       )}
     >
-      <Home/>
       {children}
     </main>
   );

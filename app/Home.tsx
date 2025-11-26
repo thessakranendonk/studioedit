@@ -67,7 +67,7 @@ const Home: React.FC = () => {
         {HomePageLinks.map((link) => (
           <div
             key={link.href}
-            className="h-[26rem] lg:border-b-[1px] hover:border-none border-zinc-300 last:border-none md:border-none mx-10 pt-4"
+            className="nd:h-[26rem] lg:border-b-[1px] hover:border-none border-zinc-300 last:border-none md:border-none mx-10 pt-4"
           >
             <LinkCard
               href={link.href}

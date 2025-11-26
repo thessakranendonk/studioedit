@@ -1,19 +1,15 @@
-import { ProjectLayout } from "@/src/components/layout/ProjectLayout";
 import "@/src/styles/globals.css";
-// import "@/styles/NewPatientIntake.module.css";
-import { ToastContainer } from "react-toastify";
+import { NavigationLink } from "@/types/component-types";
 
 import "react-toastify/dist/ReactToastify.css";
+import Home from "./Home";
 
 export const metadata = {
   title: "Studio Edit",
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+export default function Page({ children }: { children: React.ReactNode }) {
   return (
-      <ProjectLayout>
-        {children}
-        <ToastContainer />
-      </ProjectLayout> 
-  );
+    <Home />  );
 }

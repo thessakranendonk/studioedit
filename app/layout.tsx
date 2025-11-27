@@ -30,7 +30,7 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
          activeLinkClassName="text-brand-lightest font-normal lg:text-lg font-light"
     />
         <main>{children}</main>
-       <Footer logo={logo.src} navigationLinks={navigationLinks} />
+       {/* <Footer logo={logo.src} navigationLinks={navigationLinks} /> */}
     </body>
     </html>
   );

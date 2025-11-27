@@ -48,3 +48,10 @@ export interface LinkCardProps {
   name: string;
   information: string;
 }
+
+export interface DropdownProps {
+  label: string;
+  id: string;
+  name: string;
+  options: Array<string>;
+}

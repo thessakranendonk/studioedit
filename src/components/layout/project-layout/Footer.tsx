@@ -1,6 +1,5 @@
 'use client'
 import Button from "@/src/components/ui/inputs/Button";
-// import { snakeCaseToTitleCase } from "@/lib/functions";
 import { FooterProps, NavigationLink } from "../../../../types/component-types";
 import clsx from "clsx";
 import Link from "next/link";

@@ -432,6 +432,13 @@ const Header: React.FC<HeaderProps> = ({
   useOnClickOutside(ref, (event: MouseEvent | TouchEvent) => {
     setIsClick(false);
   });
+    const [hydrated, setHydrated] = useState<boolean>(false);
+
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  if (!hydrated) return null; // wait until client hydration
 
   return (
     <header className="fixed flex justify-between xl:justify-evenly w-screen items-center bg-white z-40 pb-2 md:pb-2 md:pl-4">

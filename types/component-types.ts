@@ -42,6 +42,13 @@ export interface ButtonProps {
   href: string;
 }
 
+export interface RadioButtonProps {
+  extraClassName?: string;
+  content: string;
+  label?: string;
+  options: Array<{label: string; id: string}>;
+}
+
 export interface LinkCardProps {
   href: string;
   image: string | StaticImageData;
@@ -54,4 +61,25 @@ export interface DropdownProps {
   id: string;
   name: string;
   options: Array<string>;
+}
+
+export interface InputProps {
+  id: string;
+  name: string;
+  type: string;
+  content?: JSX.Element | string;
+  label?: string;
+  extraClassName?: string;
+  placeholder?: string;
+  required?: boolean | undefined;
+  defaultValue?: string;
+}
+
+export interface DocUploadProps {
+  id?: string;
+  extraClassName?: string;
+  type: string;
+  content: string;
+  label?: string;
+  description?: string;
 }

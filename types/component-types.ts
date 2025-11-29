@@ -31,7 +31,15 @@ export interface HeaderProps {
   onLinkClick?: () => void;
 }
 
+export interface LinkCardProps {
+  href: string;
+  image: string | StaticImageData;
+  name: string;
+  information: string;
+}
+
 export type FooterProps = Pick<HeaderProps, "navigationLinks" | "logo">;
+
 
 export interface ButtonProps {
   id?: string;
@@ -42,44 +50,31 @@ export interface ButtonProps {
   href: string;
 }
 
-export interface RadioButtonProps {
+export interface BasicInputProps {
+  id?: string;
+  type?: string;  
+  name?: string;     
+  content?: JSX.Element | string;
+  description?: string;
+  label?: string;
+  showError?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void;
+  extraClassName?: string;
+}
+
+export interface RadioButtonProps extends BasicInputProps{
   extraClassName?: string;
   content: string;
-  label?: string;
   options: Array<{label: string; id: string}>;
 }
 
-export interface LinkCardProps {
-  href: string;
-  image: string | StaticImageData;
-  name: string;
-  information: string;
-}
-
-export interface DropdownProps {
-  label: string;
-  id: string;
-  name: string;
+export interface DropdownProps extends BasicInputProps {
   options: Array<string>;
 }
 
-export interface InputProps {
-  id: string;
-  name: string;
-  type: string;
-  content?: JSX.Element | string;
-  label?: string;
+export interface InputProps extends BasicInputProps {
   extraClassName?: string;
   placeholder?: string;
   required?: boolean | undefined;
   defaultValue?: string;
-}
-
-export interface DocUploadProps {
-  id?: string;
-  extraClassName?: string;
-  type: string;
-  content: string;
-  label?: string;
-  description?: string;
 }

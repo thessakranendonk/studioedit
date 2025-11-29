@@ -1,73 +1,5 @@
-// import { NextRequest, NextResponse } from "next/server";
-// import nodemailer from "nodemailer";
-// import { PDFDocument } from "pdf-lib";
-// import formidable, { Files, Fields } from "formidable";
-
-// export const config = {
-//   api: {
-//     bodyParser: false, // important: disable Next.js default body parser
-//   },
-// };
-
-// const parseForm = (req: NextRequest): Promise<{ fields: Fields; files: Files }> => {
-//   return new Promise((resolve, reject) => {
-//     const form = formidable({ multiples: true });
-
-//     // @ts-ignore: formidable expects Node.js IncomingMessage
-//     form.parse(req, (err, fields, files) => {
-//       if (err) reject(err);
-//       else resolve({ fields, files }); // files is of type Files
-//     });
-//   });
-// };
-
-// export async function POST(req: NextRequest) {
-//   try {
-//    const { fields, files } = await parseForm(req);
-
-//     console.log("Fields:", fields);
-//     console.log("Files:", files);
-    
-//     const pdfDoc = await PDFDocument.create();
-//     const page = pdfDoc.addPage([600, 400]);
-//     page.drawText(`Name: ${fields.name}`);
-//     page.drawText(`Email: ${fields.email}`, { y: 380 });
-//     page.drawText(`Project Details: ${fields.projectDetails}`, { y: 360 });
-//     const pdfBytes = await pdfDoc.save();
-
-//     const transporter = nodemailer.createTransport({
-//       host: process.env.SMTP_HOST,
-//       port: Number(process.env.SMTP_PORT),
-//       secure: false,
-//       auth: {
-//         user: process.env.SMTP_USER,
-//         pass: process.env.SMTP_PASS,
-//       },
-//     });
-
-//     await transporter.sendMail({
-//         from: process.env.SMTP_USER,
-//         to: "thessakranendonk@gmail.com",
-//         subject: "New Intake Form Submission",
-//         text: `You have a new intake form submission from ${fields.name} (${fields.email}).`,
-//         attachments: [
-//           {
-//             filename: `intake-form-${fields.name}.pdf`, 
-//             content: Buffer.from(pdfBytes),
-//             contentType: "application/pdf",
-//           },
-//         ],
-//       });
-
-//       return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
-//     } catch (error) {
-//       console.error("Error sending email:", error);
-//       return NextResponse.json({ message: "Failed to send email" }, { status: 500 });
-//     }   
-// }
-
 import { NextResponse } from "next/server";
-import { PDFDocument } from "pdf-lib";
+import { PDFDocument, rgb, StandardFonts } from "pdf-lib";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
@@ -87,13 +19,52 @@ export async function POST(req: Request) {
     // Generate PDF
     const pdfDoc = await PDFDocument.create();
     const page = pdfDoc.addPage([600, 400]);
+    const { height } = page.getSize()
+    const currentDate = new Date();
+    const formattedDate = currentDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    const helveticaFont = await pdfDoc.embedFont(StandardFonts.Helvetica)
 
-    let y = 380; // starting y position
-    const x = 50; // horizontal offset from the left
+    let y = 280; // starting y position
+    const labelX = 50;
+    const valueX = 200; // second column start
     const lineHeight = 24; // space between lines
-    for (const [key, value] of Object.entries(fields)) {
-     page.drawText(`${key}: ${value}`, { x,y });
+    const fontSize = 14
+
+    page.drawText('Intake Form', {
+    x: labelX,
+    y: height - 4 * fontSize,
+    size: 18,
+    font: helveticaFont,
+    color: rgb(0, 0.53, 0.71),
+  })
+
+   page.drawText(`Date: ${formattedDate}`, {
+            x: 50,
+            y: height - 6 * fontSize,
+            font: helveticaFont,
+            size: 9,
+            color: rgb(0, 0, 0),
+        });
+
+  for (const [key, value] of Object.entries(fields)) {
+
+     if (value instanceof File) continue;
+
+      page.drawText(`${key}:`, {
+    x: labelX,
+    y,
+    size: fontSize,
+    font: helveticaFont,
+  });
+
+  page.drawText(String(value), {
+    x: valueX,
+    y,
+    size: fontSize,
+    font: helveticaFont,
+  });
         y -= lineHeight;
+        
     }
 
     const pdfBytes = await pdfDoc.save();

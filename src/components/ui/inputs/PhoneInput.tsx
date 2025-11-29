@@ -1,10 +1,19 @@
+import { errorClass, labelErrorClass } from "@/src/styles/constants";
+import { BasicInputProps } from "@/types/component-types";
+import clsx from "clsx";
 import { ChevronDownIcon } from "flowbite-react";
 
-const PhoneInput: React.FC<React.PropsWithChildren> = ({
+const PhoneInput: React.FC<React.PropsWithChildren<BasicInputProps>> = ({ 
+  showError,
+  onChange
 }) => {
+  const baseClass = "block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base focus:outline-none";
+
+
   return (
+    
     <div className="">
-            <label htmlFor="country" className="block mb-1 text-zinc-600">Phone</label>
+            <label htmlFor="country" className="block mb-1 text-zinc-600">Phone*</label>
               <div className="flex rounded-md bg-white/5 outline-1 -outline-offset-1 outline-zinc-400 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-500">
                 <div className="grid shrink-0 grid-cols-1 focus-within:relative">
                   <select
@@ -29,9 +38,11 @@ const PhoneInput: React.FC<React.PropsWithChildren> = ({
                   name="phone"
                   placeholder="123-456-7890"
                   type="phone"
-                  className="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base focus:outline-none"
+                  onChange={onChange}
+                  className={clsx(showError ? errorClass : baseClass)}
                 />
               </div>
+              {showError && <p className={labelErrorClass}>This field is required</p>}
               </div>
 
   );

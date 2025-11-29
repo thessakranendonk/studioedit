@@ -1,0 +1,2 @@
+export const errorClass= "block w-full appearance-none rounded-md border-2 px-3.5 py-2 text-zinc-600 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-red-500 border-red-600 ring-2 ring-red-200"
+export const labelErrorClass= "mt-1 text-red-600 text-xs/6";

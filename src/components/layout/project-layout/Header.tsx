@@ -325,7 +325,7 @@ const DesktopNavBar: React.FC<
                       }}
                       onClick={() => setIsClick(true)}
                     >
-                      <Popover.Button
+                      <PopoverButton
                         className={clsx(textClassName, linkClassName)}
                       >
                         <Link className={hoverClassName} href={link.href}>
@@ -344,7 +344,7 @@ const DesktopNavBar: React.FC<
                             />
                           )}
                         </Link>
-                      </Popover.Button>
+                      </PopoverButton>
                     </div>
                     <Transition
                       enter="transition ease-out duration-100"
@@ -354,13 +354,13 @@ const DesktopNavBar: React.FC<
                       leaveFrom="transform opacity-100 scale-100"
                       leaveTo="transform opacity-0 scale-95"
                       show={
-                        link.name !== dropdownVariant ?? isClick
+                         link.name !== dropdownVariant
                           ? open
                           : isShowing
                       }
                       as={Fragment}
                     >
-                      <Popover.Panel
+                      <PopoverPanel
                         className={clsx(
                           "absolute top-[4.75rem] mt-2 w-64 origin-top-right rounded-md bg-white shadow-md shadow-teal-800 ring-1 ring-black ring-opacity-5 focus:outline-none",
                           dropdownBgColor
@@ -399,7 +399,7 @@ const DesktopNavBar: React.FC<
                             </>
                           </ul>
                         </div>
-                      </Popover.Panel>
+                      </PopoverPanel>
                     </Transition>
                   </>
                 )}

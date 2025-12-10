@@ -21,7 +21,7 @@ const dayClassName = "flex justify-center text-left text-sm text-white pb-1";
 
 const LogoFooter = () => {
   return (
-    <div className="h-full bg-brand-evenLighter flex justify-center w-full">
+    <div className="bg-brand-evenLighter flex justify-center w-full">
       <div className="relative my-auto">
         <LogoAnimation />
       </div>
@@ -49,7 +49,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
   navigationLinks,
 }) => {
   return (
-    <div className="flex flex-col justify-between h-full w-full bg-brand-lighter pb-5">
+    <div className="flex flex-col justify-between w-full bg-brand-lighter pb-5">
       <div className="relative text-center">
         <FooterHeading
           title="MENU"
@@ -88,7 +88,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
 
 const ClinicHours = () => {
   return (
-    <div className="flex flex-col justify-between h-full bg-brand-lighter md:bg-brand-base pb-8">
+    <div className="flex flex-col justify-between bg-brand-lighter md:bg-brand-base pb-8">
       <FooterHeading
         title="HOURS"
         icon={<AiOutlineClockCircle className={iconClassName} />}
@@ -122,7 +122,7 @@ const ClinicHours = () => {
 
 const ClinicContact = () => {
   return (
-    <div className="flex flex-col justify-between h-full border-t-8 md:border-none border-brand-lightest bg-brand-lighter md:bg-brand-darkest">
+    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-lightest bg-brand-lighter md:bg-brand-darkest">
       <FooterHeading
         title="CONTACT"
         icon={<MdOutlineContactPhone className={iconClassName} />}
@@ -176,7 +176,8 @@ const ClinicContact = () => {
 
 const Footer: React.FC<FooterProps> = ({ navigationLinks }) => {
   return (
-    <div className="flex flex-col-reverse md:grid md:grid-cols-4 h-full mt-48">
+    // <div className="grid md:grid-cols-4 bg-gray-900">
+    <div className="bg-gray-900">
       <div className="hidden md:inline-block">
         <LogoFooter />
       </div>

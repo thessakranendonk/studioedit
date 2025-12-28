@@ -6,7 +6,7 @@ const Hero: React.FC = () => {
   return (
     <div className="relative">
       <img
-        src="/images/hero8.png"
+        src="/images/hero9.png"
         className="w-full xl:h-[38rem] z-0 object-cover contrast-more"
         alt="Studio Edit"
       />

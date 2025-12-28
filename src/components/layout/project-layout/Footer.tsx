@@ -13,6 +13,9 @@ import LogoAnimation from "@/src/components/LogoAnimation";
 // import { CLINIC_DETAILS, HOURS } from "../../../../data/clinic-data";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineContactPhone } from "react-icons/md";
+import { CONTACT_DETAILS } from "@/src/data/data";
+import logo from "../../../../public/images/Studioedit8.png";
+
 
 const iconClassName = "mt-1 mr-2 w-4 h-4 text-white";
 const divClassName = " flex flex-row justify-center mt-5 mb-1";
@@ -21,9 +24,9 @@ const dayClassName = "flex justify-center text-left text-sm text-white pb-1";
 
 const LogoFooter = () => {
   return (
-    <div className="bg-brand-evenLighter flex justify-center w-full">
-      <div className="relative my-auto">
-        <LogoAnimation />
+    <div className="bg-[#0b3330] flex justify-center w-full h-48">
+      <div className="my-auto">
+        <LogoAnimation width={275} height={200} logo={logo.src}/>
       </div>
     </div>
   );
@@ -49,21 +52,20 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
   navigationLinks,
 }) => {
   return (
-    <div className="flex flex-col justify-between w-full bg-brand-lighter pb-5">
+    <div className="flex flex-col justify-between w-full pb-5 bg-[#0b3330]">
       <div className="relative text-center">
         <FooterHeading
           title="MENU"
           icon={<AiOutlineMenu className="mt-1 mr-2 w-4 h-4 text-white" />}
         />
 
-        <ul className="flex flex-col mx-auto text-md gap-y-2 font-light text-white mt-4">
+        <ul className="flex flex-col mx-auto text-md gap-y-6 font-light text-white mt-4">
           {navigationLinks.map((link) => (
             <li key={link.name}>
               {link.name !== "FORMS" ? (
                 <div className="hover:font-medium">
                   <Link href={link.href}>
-                    {/* {snakeCaseToTitleCase(link.name)} */}
-                    name
+                    {link.name}
                   </Link>
                 </div>
               ) : (
@@ -71,8 +73,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
                   {link.dropdown?.map((drop) => (
                     <li key={drop.name} className="hover:font-medium">
                       <Link href={drop.href}>
-                        {/* {snakeCaseToTitleCase(drop.name)} */}
-                        name2
+                        {drop.name}
                       </Link>
                     </li>
                   ))}
@@ -86,43 +87,9 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
   );
 };
 
-const ClinicHours = () => {
-  return (
-    <div className="flex flex-col justify-between bg-brand-lighter md:bg-brand-base pb-8">
-      <FooterHeading
-        title="HOURS"
-        icon={<AiOutlineClockCircle className={iconClassName} />}
-      />
-
-      {/* <ul className="hidden md:inline-block w-[calc(10% - 10px)] mx-2 lg:mx-12 pt-8">
-        {HOURS.map((day) => (
-          <li key={day.day} className={hoursClassName}>
-            <p className={`${dayClassName} font-bold`}>{day.day}</p>
-            <p className={dayClassName}>{day.hours}</p>
-          </li>
-        ))}
-      </ul> */}
-      <div className="flex justify-evenly md:hidden text-white text-sm w-[calc(10% - 10px)] mx-2 pt-8">
-        <div className="flex flex-col text-center md:flex-row justify-between">
-          <p>Mon - Thu</p>
-          <p>10 AM - 5 PM</p>
-        </div>
-        <div className="flex flex-col text-center md:flex-row justify-between">
-          <p>Fri</p>
-          <p>10 AM - 4 PM</p>
-        </div>
-        <div className="flex flex-col md:flex-row j text-center ustify-between">
-          <p>Every Other Sat</p>
-          <p>10 AM - 4 PM</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const ClinicContact = () => {
   return (
-    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-lightest bg-brand-lighter md:bg-brand-darkest">
+    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-lightest bg-[#0b3330]">
       <FooterHeading
         title="CONTACT"
         icon={<MdOutlineContactPhone className={iconClassName} />}
@@ -130,22 +97,22 @@ const ClinicContact = () => {
       <div className="pb-8 pt-4 md:pt-0">
         <div className={divClassName}>
           <AiOutlinePhone className={iconClassName} />
-          {/* <a
+          <a
             className="hover:underline text-sm text-white"
-            href={`tel:${CLINIC_DETAILS.phone}`}
+            href={`tel:${CONTACT_DETAILS.phone}`}
           >
-            {CLINIC_DETAILS.phone}
-          </a> */}
+            {CONTACT_DETAILS.phone}
+          </a>
         </div>
 
         <div className={divClassName}>
           <AiOutlineMail className={iconClassName} />
-          {/* <a
+          <a
             className="hover:underline text-sm text-white"
-            href={`mailto:${CLINIC_DETAILS.email}`}
+            href={`mailto:${CONTACT_DETAILS.email}`}
           >
-            {CLINIC_DETAILS.email}
-          </a> */}
+            {CONTACT_DETAILS.email}
+          </a>
         </div>
 
         <div className={divClassName}>
@@ -156,7 +123,7 @@ const ClinicContact = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {/* {CLINIC_DETAILS.address} */}
+            {CONTACT_DETAILS.address}
           </a>
         </div>
         <div className="w-full justify-center hidden md:flex">
@@ -176,16 +143,12 @@ const ClinicContact = () => {
 
 const Footer: React.FC<FooterProps> = ({ navigationLinks }) => {
   return (
-    // <div className="grid md:grid-cols-4 bg-gray-900">
-    <div className="bg-gray-900">
+    <div className="grid md:grid-cols-3 bg-[#0b3330]">
       <div className="hidden md:inline-block">
         <LogoFooter />
       </div>
       <div className="hidden md:inline-block">
         <FooterMenu navigationLinks={navigationLinks} />
-      </div>
-      <div>
-        <ClinicHours />
       </div>
       <div>
         <ClinicContact />

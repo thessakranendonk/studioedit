@@ -10,7 +10,8 @@ import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
 import LogoAnimation from "@/src/components/LogoAnimation";
 import { AnimatePresence, motion } from "framer-motion";
-// const Logo = require('@/public/images/logo.png')
+import logo from "../../../../public/images/Studioedit5.png";
+
 
 export function useOnClickOutside<T extends HTMLElement>(
   ref: React.RefObject<T | null>,
@@ -44,6 +45,7 @@ const LogoLink: React.FC<
   > & {
     logoClassName?: string;
     showSidePanel?: boolean;
+    logo: any;
   }
 > = ({ onLinkClick, logoClassName }) => {
   return (
@@ -58,7 +60,7 @@ const LogoLink: React.FC<
         )}
         onClick={onLinkClick}
       >
-        <LogoAnimation />
+        <LogoAnimation width={150} height={250} logo={logo}/>
       </Link>
     </div>
   );
@@ -423,7 +425,6 @@ const Header: React.FC<HeaderProps> = ({
   dropdownBgColor,
   arrowColor,
   textClassName,
-  logo,
   logoClassName,
   alt,
 }) => {
@@ -441,10 +442,10 @@ const Header: React.FC<HeaderProps> = ({
   if (!hydrated) return null; // wait until client hydration
 
   return (
-    <header className="fixed flex justify-between xl:justify-evenly w-screen items-center bg-white z-40 pb-2 md:pb-2 md:pl-4">
+    <header className="fixed flex justify-between xl:justify-evenly w-screen h-28 items-center bg-white z-40 pb-2 md:pb-2 md:pl-4">
       <div className="m-0">
         {logo ? (
-          <LogoLink logo={logo} alt={alt} logoClassName={logoClassName} />
+          <LogoLink logo={logo.src} alt={alt} logoClassName={logoClassName} />
         ) : (
           <Link href="/">
             <div className={clsx(companyNameClassName, "")}>{companyName}</div>

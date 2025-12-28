@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import Image from "next/image";
+import { CONTACT_DETAILS } from "../data/data";
 
 const fadeIn = keyframes`
   from {
@@ -18,7 +19,8 @@ const FadeInImage = styled(Image)`
   animation: ${fadeIn} 1s ease-in-out;
 `;
 
-const LogoAnimation = () => {
+const LogoAnimation = ({ width, height, logo }: { width: number; height: number; logo: any }) => {
+
   const [isFadeIn, setIsFadeIn] = useState(false);
 
   useEffect(() => {
@@ -29,10 +31,10 @@ const LogoAnimation = () => {
     <div>
       {isFadeIn ? (
         <FadeInImage
-          src="/images/logo.png"
-          alt="Richmond West Dental"
-          width={150}
-          height={150}
+          src={logo}
+          alt={CONTACT_DETAILS.contact_name}
+          width={width}
+          height={height}
           priority={true}
           className=""
         />

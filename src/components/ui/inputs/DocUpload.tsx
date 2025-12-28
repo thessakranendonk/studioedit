@@ -1,8 +1,8 @@
-import { DocUploadProps } from "@/types/component-types";
+import { BasicInputProps } from "@/types/component-types";
 import { PhotoIcon } from '@heroicons/react/24/solid'
 import clsx from "clsx";
 
-const DocUpload: React.FC<React.PropsWithChildren<DocUploadProps>> = ({
+const DocUpload: React.FC<React.PropsWithChildren<BasicInputProps>> = ({
   id,
   extraClassName,
   type,
@@ -22,7 +22,7 @@ const DocUpload: React.FC<React.PropsWithChildren<DocUploadProps>> = ({
                   <div className="mt-2 flex text-sm/6 text-gray-400">
                     <label
                       htmlFor={id}
-                      className="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-400 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500 hover:text-indigo-300"
+                      className="relative cursor-pointer rounded-md bg-transparent font-semibold text-[#c58210] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500 hover:text-indigo-300"
                     >
                       <span>{content}</span>
                       <input id={id} name={id} type={type} className="sr-only" />

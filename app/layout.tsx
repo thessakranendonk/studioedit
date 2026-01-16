@@ -17,7 +17,7 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
       { name: "Academic Editing", href: "/services#academic-editing" },
       { name: "Professional Editing", href: "/services#professional-editing" },
       {name: "Creative Editing", href: "/services#creative-editing" },] },
-    { name: "ABOUT US", href: "/about-us" },
+    { name: "MY PHILOSOPHY", href: "/my-philosophy" },
     { name: "REQUEST QUOTE", href: "/request-quote" },
   ];
 

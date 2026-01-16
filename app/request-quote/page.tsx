@@ -11,7 +11,7 @@ import RadioButton from "@/src/components/ui/inputs/RadioButton";
 import PhoneInput from "@/src/components/ui/inputs/PhoneInput";
 import { errorClass, labelErrorClass } from "@/src/styles/constants";
 
-const IntakeForm: React.FC = () => {
+const RequestQuote: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [validated, setValidated] = useState(false);
 const [values, setValues] = useState<Record<string, string>>({});
@@ -44,18 +44,18 @@ const [values, setValues] = useState<Record<string, string>>({});
     onSubmit={handleSubmit}>
       
  
-    <PageHeading heading="Intake Form" />
+    <PageHeading heading="Request a Quote" />
     <h2 className="max-w-lg mx-auto mt-10 font-semibold text-sm/6 text-[#c58210]">Contact Details</h2>
     <div className="grid grid-cols-2 gap-2 space-y-4 p-8 mx-auto max-w-xl text-sm/6 font-semibold text-zinc-600">
     <InputField id={"firstname"} label={"First Name*"} name={"firstname"} type={"text"} required={true} showError={isInvalid("firstname")} onChange={(e) => handleFieldChange("firstname", e.target.value)} />
     <InputField id={"lastname"} label={"Last Name*"} name={"lastname"} type={"text"} required={true} showError={isInvalid("lastname")} onChange={(e) => handleFieldChange("lastname", e.target.value)} />
     <PhoneInput showError={isInvalid("phone")} onChange={(e) => handleFieldChange("phone", e.target.value)}/>
     <InputField id={"email"} label={"Email*"} name={"email"} type={"email"} required={true} showError={isInvalid("email")} onChange={(e) => handleFieldChange("email", e.target.value)} />
-    <RadioButton content={"How would you like to be contacted?"} extraClassName="flex" options={[{"label":"Email", "id":"contact-method-email"}, {"label":"Phone", "id":"contact-method-phone"}]} name="contactmethod" showError={isInvalid("contactmethod")} onChange={(e) => handleFieldChange("contactmethod", e.target.value)} />
+    <RadioButton content={"How would you like to be contacted?"} extraClassName="flex" options={[{"label":"Phone", "id":"contact-method-phone"}, {"label":"Video", "id":"contact-method-video"}]} name="contactmethod" showError={isInvalid("contactmethod")} onChange={(e) => handleFieldChange("contactmethod", e.target.value)} />
  
         <h2 className="col-span-2 max-w-lg text-sm/6 mt-10 font-semibold text-[#c58210]">Project Details</h2>
-    <Dropdown id={"style"} label={"What style guide should I use?*"} name={"style"} options={["APA", "MLA", "Chicago", "Harvard", "IEEE", "Journal-specific guidelines", "Not sure", "Other, please describe below"]} showError={isInvalid("style")} onChange={(e) => handleFieldChange("style", e.target.value)} />
-    <Dropdown id={"deliverable"} label={"What is the expected deliverable?*"} name={"deliverable"} options={["Proofread copy", "Structural edit", "Polished final version", "Tracked-changes file", "Annotated comments", "Not sure", "Other, please describe below"]} showError={isInvalid("deliverable")} onChange={(e) => handleFieldChange("deliverable", e.target.value)}/>
+    <Dropdown id={"style"} label={"What style guide should I use?"} name={"style"} options={["APA", "MLA", "Chicago", "Harvard", "IEEE", "Journal-specific guidelines", "Not sure", "Other, please describe below"]} showError={isInvalid("style")} onChange={(e) => handleFieldChange("style", e.target.value)} />
+    <Dropdown id={"deliverable"} label={"What is the expected deliverable?"} name={"deliverable"} options={["Proofread copy", "Structural edit", "Polished final version", "Tracked-changes file", "Annotated comments", "Not sure", "Other, please describe below"]} showError={isInvalid("deliverable")} onChange={(e) => handleFieldChange("deliverable", e.target.value)}/>
         <div className="col-span-2">
             <label htmlFor="work-description" className="block">
               Please describe your work*
@@ -80,4 +80,4 @@ const [values, setValues] = useState<Record<string, string>>({});
   );
 };
 
-export default IntakeForm;
+export default RequestQuote;

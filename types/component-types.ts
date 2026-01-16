@@ -36,6 +36,8 @@ export interface LinkCardProps {
   image: string | StaticImageData;
   name: string;
   information: string;
+  icon?: JSX.Element;
+  hoverIcon?: JSX.Element;
 }
 
 export type FooterProps = Pick<HeaderProps, "navigationLinks" | "logo">;

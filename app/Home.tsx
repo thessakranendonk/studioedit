@@ -1,10 +1,11 @@
 'use client';
 // import PatientTestimonials from "@/components/PatientTestimonials";
 import LinkCard from "@/src/components/ui/LinkCard";
-import { RiDoubleQuotesL, RiServiceFill, RiServiceLine } from "react-icons/ri";
-// import { HiOfficeBuilding, HiOutlineOfficeBuilding } from "react-icons/hi";
+import { RiDoubleQuotesL, RiQuillPenAiFill, RiQuillPenAiLine  } from "react-icons/ri";
+import { HiLightBulb, HiOutlineLightBulb  } from "react-icons/hi";
 // import { MdCamera, MdOutlineCamera } from "react-icons/md";
 // import DentalOffer from "@/components/DentalOffer";
+import { HiOutlineAcademicCap, HiAcademicCap,  } from "react-icons/hi2";
 import Hero from "@/src/components/Hero";
 import { useAnimation, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -12,8 +13,9 @@ import { useEffect, useState } from "react";
 import image1 from '@/public/images/typewriter.jpg';
 import image2 from '@/public/images/closeup.jpg';
 import image3 from '@/public/images/computer.jpg'
+import Judy from '@/public/images/Judy.webp'
 
-const iconClassName = "w-24 h-24 text-brand-base";
+const iconClassName = "w-24 h-24 text-[#0b3330]";
 
 const HomePageLinks = [
   {
@@ -21,7 +23,9 @@ const HomePageLinks = [
     name: "Academic Editing",
     information:
       "Clearer structure, stronger arguments,and polished scholarly writing fordissertations, manuscripts, and articles",
-    image: image1
+    image: image1,
+    icon: <HiAcademicCap className={iconClassName} />,
+    hoverIcon: <HiOutlineAcademicCap className={iconClassName} />,
   },
   {
     href: "/professional-editing",
@@ -29,6 +33,8 @@ const HomePageLinks = [
     information:
       "Effective messaging and precise communication for speeches, presentations, and grant proposals",
     image: image2,
+    icon: <RiQuillPenAiFill className={iconClassName} />,
+    hoverIcon: <RiQuillPenAiLine  className={iconClassName} />,
   },
   {
     href: "/creative-editing",
@@ -36,6 +42,8 @@ const HomePageLinks = [
     information:
       "Refined narrative, vibrant characters, and immersive storytelling for fiction, nonfiction, and screenplays",
     image: image3,
+    icon: <HiLightBulb className={iconClassName} />,
+    hoverIcon: <HiOutlineLightBulb className={iconClassName} />,
   },
 ];
 
@@ -63,7 +71,21 @@ const Home: React.FC = () => {
   return (
     <div>
       <Hero />
-      <ul className="flex flex-col md:flex-row md:justify-evenly lg:justify-center md:mt-12 lg:mt-24 md:mb-10">
+     <div className="flex flex-col items-center md:flex-row md:justify-center w-80 md:w-180 lg:w-230 mx-auto"> <img src={Judy.src} alt="Judy" className="w-38 h-38 mt-10 rounded-full object-cover object-[75%_25%] brightness-105 saturate-90 drop-shadow-lg" />
+      <p className="mx-auto pt-10 md:pt-15 w-80 md:w-150 lg:w-200 text-center md:text-left text-md md:text-lg md:text-md font-normal text-[#0b3330] md:pl-10 pb-10 md:pb-0">
+            
+I offer academic, professional, and creative editing services designed to help you produce compelling, submission-ready work. My approach is grounded in thoughtful, one-on-one collaboration that respects your voice, supports your goals, and strengthens your writing with clarity and precision.
+
+
+          </p></div>
+          <h2 className="text-2xl md:text-3xl font-medium text-[#0b3330] text-center tracking-widest mb-6 underline underline-offset-4 md:mt-20">SERVICES</h2>
+       <motion.div
+        ref={ref}
+        viewport={{ once: true }}
+        animate={controls}
+        initial="hidden"
+        variants={fadeIn}
+      ><ul className="flex flex-col md:flex-row md:justify-evenly lg:justify-center md:mt-12 lg:mt-24 md:mb-10">
         {HomePageLinks.map((link) => (
           <div
             key={link.href}
@@ -73,25 +95,18 @@ const Home: React.FC = () => {
               href={link.href}
               name={link.name}
               image={link.image}
-              // hoverIcon={link.hoverIcon}
+              icon={link.icon}
+              hoverIcon={link.hoverIcon}
               information={link.information}
             />
           </div>
         ))}
-      </ul>
-      <motion.div
-        ref={ref}
-        viewport={{ once: true }}
-        animate={controls}
-        initial="hidden"
-        variants={fadeIn}
-      >
-        {/* <DentalOffer /> */}
-      </motion.div>
+      </ul></motion.div>
+      
       <p className="text-center font-extrabold text-brand-base mt-32">
         ________________
       </p>
-      <h1 className="text-center uppercase font-medium text-3xl xl:text-4xl mt-14 md:mt-24 tracking-widest text-zinc-700">
+      <h1 className="text-center uppercase font-medium text-2xl md:text-3xl xl:text-4xl mt-14 md:mt-24 tracking-widest text-[#0b3330]">
         Client Testimonials
       </h1>
       <div className="bg-zinc-200 relative mx-auto mt-24">

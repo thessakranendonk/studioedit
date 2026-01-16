@@ -95,7 +95,7 @@ const ClinicContact = () => {
         icon={<MdOutlineContactPhone className={iconClassName} />}
       />
       <div className="pb-8 pt-4 md:pt-0">
-        <div className={divClassName}>
+        {/* <div className={divClassName}>
           <AiOutlinePhone className={iconClassName} />
           <a
             className="hover:underline text-sm text-white"
@@ -103,7 +103,7 @@ const ClinicContact = () => {
           >
             {CONTACT_DETAILS.phone}
           </a>
-        </div>
+        </div> */}
 
         <div className={divClassName}>
           <AiOutlineMail className={iconClassName} />
@@ -119,7 +119,7 @@ const ClinicContact = () => {
           <CiLocationOn className={iconClassName} />
           <a
             className="hover:underline text-sm text-white"
-            href="https://www.google.com/maps?q=500+Richmond+St.+W,+Suite+128,+Toronto,+ON,+M5V+3N4"
+            href="https://www.google.com/maps/place/Hamilton,+ON/@43.2606916,-80.0982971,11z/data=!3m1!4b1!4m6!3m5!1s0x882c986c27de778f:0x2b6aee56d8df0e21!8m2!3d43.2557206!4d-79.8711024!16zL20vMDNwemY?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -129,11 +129,11 @@ const ClinicContact = () => {
         <div className="w-full justify-center hidden md:flex">
           <Button
             extraClassName={clsx(
-              "bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest"
+              "bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-[#0b3330] hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest"
             )}
             type="button"
-            content="BOOK NOW"
-            href="/new-appointment"
+            content="Request Quote"
+            href="/request-quote"
           />
         </div>
       </div>

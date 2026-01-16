@@ -19,12 +19,12 @@ const LinkCard: React.FC<LinkCardProps> = ({
     >
       <div className="mx-auto pt-4">
         {/* {iconType === "icon" ? icon : hoverIcon} */}
-        {image && <Image src={image} alt={name} className="w-64 h-48 md:h-64 rounded-full object-cover mb-4" />}
+        {image && <Image src={image} alt={name} className="w-18 h-48 md:h-18 rounded-full object-cover mb-4" />}
       </div>
 
       <h2 className="text-xl uppercase lg:text-2xl text-zinc-600 font-light">{name}</h2>
 
-      <p className="text-lg lg:text-xl text-zinc-200 font-extralight">
+      <p className="text-lg lg:text-xl text-zinc-500 font-extralight">
         {information}
       </p>
     </Link>

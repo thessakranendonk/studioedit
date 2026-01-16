@@ -14,7 +14,7 @@ import LogoAnimation from "@/src/components/LogoAnimation";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineContactPhone } from "react-icons/md";
 import { CONTACT_DETAILS } from "@/src/data/data";
-import logo from "../../../../public/images/Studioedit8.png";
+import logo from "../../../../public/images/STGreen.png";
 
 
 const iconClassName = "mt-1 mr-2 w-4 h-4 text-white";
@@ -26,7 +26,7 @@ const LogoFooter = () => {
   return (
     <div className="bg-[#0b3330] flex justify-center w-full h-48">
       <div className="my-auto">
-        <LogoAnimation width={275} height={200} logo={logo.src}/>
+        <LogoAnimation width={150} height={125} logo={logo.src} extraClassName=""/>
       </div>
     </div>
   );

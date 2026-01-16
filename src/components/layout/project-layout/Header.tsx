@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
 import LogoAnimation from "@/src/components/LogoAnimation";
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "../../../../public/images/Studioedit5.png";
+import logo from "../../../../public/images/STGreen.png";
 
 
 export function useOnClickOutside<T extends HTMLElement>(
@@ -49,7 +49,7 @@ const LogoLink: React.FC<
   }
 > = ({ onLinkClick, logoClassName }) => {
   return (
-    <div className="hover:animate-spin">
+    <div className="hover:animate-pulse">
       <Link
         href="/"
         className={clsx(
@@ -60,8 +60,8 @@ const LogoLink: React.FC<
         )}
         onClick={onLinkClick}
       >
-        <LogoAnimation width={150} height={250} logo={logo}/>
-      </Link>
+        <LogoAnimation width={100} height={100} logo={logo}/>
+              </Link>
     </div>
   );
 };

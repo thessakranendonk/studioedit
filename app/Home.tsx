@@ -17,24 +17,24 @@ const iconClassName = "w-24 h-24 text-brand-base";
 
 const HomePageLinks = [
   {
-    href: "/professional-creative-editing",
-    name: "Professional & Creative Editing",
+    href: "/academic-editing",
+    name: "Academic Editing",
     information:
-      "",
+      "Clearer structure, stronger arguments,and polished scholarly writing fordissertations, manuscripts, and articles",
     image: image1
   },
   {
-    href: "/Educational-editing",
-    name: "Educational Editing",
+    href: "/professional-editing",
+    name: "Professional Editing",
     information:
-      "",
+      "Effective messaging and precise communication for speeches, presentations, and grant proposals",
     image: image2,
   },
   {
-    href: "/phd-consultations",
-    name: "PhD Consultations",
+    href: "/creative-editing",
+    name: "Creative Editing",
     information:
-      "",
+      "Refined narrative, vibrant characters, and immersive storytelling for fiction, nonfiction, and screenplays",
     image: image3,
   },
 ];

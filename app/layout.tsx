@@ -14,8 +14,9 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
 
   const navigationLinks: Array<NavigationLink> = [
     { name: "SERVICES", href: "/services", dropdown: [
-      { name: "Editing", href: "/services#editing" },
-      { name: "Proofreading", href: "/services#proofreading" }] },
+      { name: "Academic Editing", href: "/services#academic-editing" },
+      { name: "Professional Editing", href: "/services#professional-editing" },
+      {name: "Creative Editing", href: "/services#creative-editing" },] },
     { name: "ABOUT US", href: "/about-us" },
     { name: "INTAKE FORM", href: "/intake-form" },
   ];

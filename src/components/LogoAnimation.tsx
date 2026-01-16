@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import Image from "next/image";
 import { CONTACT_DETAILS } from "../data/data";
+import clsx from "clsx";
 
 const fadeIn = keyframes`
   from {
@@ -19,7 +20,7 @@ const FadeInImage = styled(Image)`
   animation: ${fadeIn} 1s ease-in-out;
 `;
 
-const LogoAnimation = ({ width, height, logo }: { width: number; height: number; logo: any }) => {
+const LogoAnimation = ({ width, height, logo, extraClassName }: { width: number; height: number; logo: any, extraClassName?: string }) => {
 
   const [isFadeIn, setIsFadeIn] = useState(false);
 
@@ -36,7 +37,7 @@ const LogoAnimation = ({ width, height, logo }: { width: number; height: number;
           width={width}
           height={height}
           priority={true}
-          className=""
+          className={clsx("rounded-lg", extraClassName)}
         />
       ) : null}
     </div>

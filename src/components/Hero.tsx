@@ -1,16 +1,34 @@
-// import { useAnimation, motion } from "framer-motion";
-// import { useInView } from "react-intersection-observer";
-// import { useEffect } from "react";
+import { useAnimation, motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useState } from "react";
+import { slowFadeIn } from "@/app/Home";
 
 const Hero: React.FC = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  const [isInView, setIsInView] = useState(false);
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
     <div className="relative">
+
       <img
         src="/images/hero9.png"
         className="w-full h-[22rem] md:h-[36rem] lg:h-[40rem] z-0 object-scale-down object-bottom md:object-cover md:object-top lg:object-center contrast-more"
         alt="Syntax Studio Edit"
       />
-      <div className="absolute inset-0 bg-brand-base/70 z-10 brightness-125"></div>
+<motion.div
+        ref={ref}
+        className="absolute inset-0 z-10"
+        viewport={{ once: true }}
+        animate={controls}
+        initial="hidden"
+        variants={slowFadeIn}
+      >
+              <div className="absolute inset-0 bg-brand-base/70 z-10 brightness-125"></div>
 
       <div className="w-full absolute top-2/3 left-1/2 md:top-1/2 md:left-1/2 md:mt-10 transform -translate-x-1/2 -translate-y-1/2 z-20 animate-fadeIn transition duration-100">
         <div className="flex flex-col items-center text-center">
@@ -20,14 +38,10 @@ const Hero: React.FC = () => {
           <p className="text-sm md:text-2xl mb-6 text-white font-light pb-4 text-shadow-lg shadow-zinc-500">
             Human Editing for Work That Matters.
           </p>
-          {/* <p className="w-128 text-sm md:text-md font-extralight text-zinc-200 text-shadow-lg shadow-zinc-500">
-            
-I offer academic, professional, and creative editing services designed to help you produce compelling, submission-ready work. My approach is grounded in thoughtful, one-on-one collaboration that respects your voice, supports your goals, and strengthens your writing with clarity and precision.
-
-
-          </p> */}
+          
         </div>
       </div>
+      </motion.div>
     </div>
   );
 };

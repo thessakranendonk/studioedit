@@ -3,7 +3,7 @@ import { NavigationLink } from "../types/component-types";
 import clsx from "clsx";
 import Footer from "../src/components/layout/project-layout/Footer";
 import Header from "../src/components/layout/project-layout/Header";
-import "@/src/styles/globals.css";
+import "./globals.css";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
 

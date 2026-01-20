@@ -24,7 +24,7 @@ const dayClassName = "flex justify-center text-left text-sm text-white pb-1";
 
 const LogoFooter = () => {
   return (
-    <div className="bg-[#0b3330] flex justify-center w-full h-48">
+    <div className="bg-brand-base flex justify-center w-full h-48">
       <div className="my-auto">
         <LogoAnimation width={150} height={125} logo={logo.src} extraClassName=""/>
       </div>
@@ -52,7 +52,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
   navigationLinks,
 }) => {
   return (
-    <div className="flex flex-col justify-between w-full pb-5 bg-[#0b3330]">
+    <div className="flex flex-col justify-between w-full pb-5 bg-brand-base">
       <div className="relative text-center">
         <FooterHeading
           title="MENU"
@@ -89,7 +89,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
 
 const ClinicContact = () => {
   return (
-    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-lightest bg-[#0b3330]">
+    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-lightest bg-brand-base">
       <FooterHeading
         title="CONTACT"
         icon={<MdOutlineContactPhone className={iconClassName} />}
@@ -129,7 +129,7 @@ const ClinicContact = () => {
         <div className="w-full justify-center hidden md:flex">
           <Button
             extraClassName={clsx(
-              "bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-[#0b3330] hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest"
+              "bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest"
             )}
             type="button"
             content="Request Quote"
@@ -143,7 +143,7 @@ const ClinicContact = () => {
 
 const Footer: React.FC<FooterProps> = ({ navigationLinks }) => {
   return (
-    <div className="grid md:grid-cols-3 bg-[#0b3330]">
+    <div className="grid md:grid-cols-3 bg-brand-base">
       <div className="hidden md:inline-block">
         <LogoFooter />
       </div>

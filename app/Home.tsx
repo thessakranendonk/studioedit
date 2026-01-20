@@ -14,6 +14,7 @@ import image1 from '@/public/images/typewriter.jpg';
 import image2 from '@/public/images/closeup.jpg';
 import image3 from '@/public/images/computer.jpg'
 import Judy from '@/public/images/Judy.webp'
+import { scale } from "pdf-lib";
 
 const iconClassName = "w-24 h-24 text-[#0b3330]";
 
@@ -50,11 +51,25 @@ const HomePageLinks = [
 export const fadeIn = {
   visible: {
     opacity: 1,
-    transition: { duration: 0.5, delay: 1.25 },
+    transition: { duration: 0.75, delay: 1 },
     filter: "blur(0)",
   },
   hidden: {
     opacity: 0,
+    filter: "blur(40px)",
+  },
+};
+
+export const slowFadeIn = {
+  visible: {
+    opacity: 1,
+    transition: { duration: 1.5, delay: 1  },
+    scale: 1,
+    filter: "blur(0)",
+  },
+  hidden: {
+    opacity: 0,
+    scale: 0.25,
     filter: "blur(40px)",
   },
 };

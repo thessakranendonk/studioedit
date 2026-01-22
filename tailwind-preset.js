@@ -5,25 +5,6 @@ import plugin from "tailwindcss/plugin";
 export default {
   theme: {
     /* =========================
-     * COLORS
-     * ========================= */
-    colors: {
-      current: "currentColor",
-      error: "#e71010",
-      brand: {
-        evenLighter: "#c5e2e7",
-        lightest: "#52868E",
-        lighter: "#4A7B82",
-        base: "#3d6469",
-        dark: "#34565B",
-        darkest: "#042d34ff",
-      },
-      ui: {
-        error: red[700],
-      },
-    },
-
-    /* =========================
      * TEXT SHADOW
      * ========================= */
     textShadow: {

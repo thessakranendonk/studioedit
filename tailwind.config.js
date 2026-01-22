@@ -26,7 +26,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   presets: [require('./tailwind-preset.js')],
-  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
       zIndex: {

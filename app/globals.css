@@ -6,9 +6,76 @@
    * ========================= */
   --color-error: #e71010;
   --color-brand-even-lighter: #c5e2e7;
-  --color-brand-lightest: #52868e;
-  --color-brand-lighter: #4a7b82;
+  --color-brand-lightest: #188d87;
+  --color-brand-lighter: #0e403d;
   --color-brand-base: #0b3330;
-  --color-brand-dark: #34565b;
-  --color-brand-darkest: #042d34;
+  --color-brand-dark: #082a28;
+  --color-brand-darkest: #051d1b;
+
+  /* =========================
+   * CLIP PATHS
+   * ========================= */
+  --clip-diagonal: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  --clip-oct: polygon(
+    30% 0%, 70% 0%,
+    100% 30%, 100% 70%,
+    70% 100%, 30% 100%,
+    0% 70%, 0% 30%
+  );
+  --clip-hex: polygon(
+    25% 0%, 75% 0%,
+    100% 50%,
+    75% 100%, 25% 100%,
+    0% 50%
+  );
+
+  --clip-decagon: polygon(
+    100% 50%,
+    90.45% 79.39%,
+    65.45% 97.55%,
+    34.55% 97.55%,
+    9.55% 79.39%,
+    0% 50%,
+    9.55% 20.61%,
+    34.55% 2.45%,
+    65.45% 2.45%,
+    90.45% 20.61%
+  );
+}
+
+@layer utilities {
+  .polygon {
+    aspect-ratio: 1;
+    background-color: var(--color-brand-base);
+    clip-path: var(--clip-decagon);
+  }
+
+  .octagon {
+    aspect-ratio: 1;
+    --o: calc(50% * tan(22.5deg));
+    clip-path: polygon(
+      var(--o) 50%,
+      50% var(--o),
+      calc(100% - var(--o)) 50%,
+      50% calc(100% - var(--o))
+    );
+    background-color: var(--color-brand-base);
+  }
+
+  .hexagon {
+    aspect-ratio: cos(40deg);
+    clip-path: polygon(
+      -50% 50%,
+      50% 100%,
+      150% 50%,
+      50% 0
+    );
+    background: radial-gradient(circle,rgba(14, 64, 61, 1) 0%, rgba(5, 29, 27, 1) 100%);
+  }
+
+  .wrapper {
+    filter: drop-shadow(2px 2px 10px var(--color-brand-lighter))
+            drop-shadow(2px 2px 10px var(--color-brand-lightest));
+
+  }
 }

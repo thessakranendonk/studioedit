@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { notFound } from 'next/navigation'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import type { Metadata } from 'next'
+import { mdxComponents } from '@/src/components/mdxComponents'
 
 const CONTENT_DIR = path.join(process.cwd(), 'content')
 
@@ -28,7 +29,7 @@ export default async function Page({ params }: PageProps) {
   return (
     <article className="prose mx-auto py-10 mt-30">
       <h1>{data.title}</h1>
-      <MDXRemote source={content} />
+      <MDXRemote source={content} components={mdxComponents as any} />
     </article>
   )
 }

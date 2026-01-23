@@ -6,6 +6,7 @@ import Header from "../src/components/layout/project-layout/Header";
 import "./globals.css";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
+import path from "path";
 
 
 export default function ProjectLayout({ children }: { children: React.ReactNode }) {
@@ -13,13 +14,13 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
   const pathname = usePathname();
 
   const navigationLinks: Array<NavigationLink> = [
-    { name: "TEST", href: "/test", dropdown: [
-      { name: "Academic Editing", href: "/services#academic-editing" },
-      { name: "Professional Editing", href: "/services#professional-editing" },
-      {name: "Creative Editing", href: "/services#creative-editing" },] },
+    { name: "SERVICES", href: "/services", dropdown: [
+      { name: "Academic Editing", href: "/services/academic-editing" },
+      { name: "Professional Editing", href: "/services/professional-editing" },
+      {name: "Creative Editing", href: "/services/creative-editing" },] },
+
     { name: "MY PHILOSOPHY", href: "/my-philosophy" },
     { name: "REQUEST QUOTE", href: "/request-quote" },
-    { name: "SERVICES", href: "/services" },
   ];
 
   return (

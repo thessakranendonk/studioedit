@@ -14,7 +14,6 @@ import image1 from '@/public/images/typewriter.jpg';
 import image2 from '@/public/images/closeup.jpg';
 import image3 from '@/public/images/computer.jpg'
 import Judy from '@/public/images/Judy.webp'
-import { scale } from "pdf-lib";
 
 const iconClassName = "w-24 h-24 text-[#0b3330]";
 

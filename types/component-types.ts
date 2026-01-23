@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import { StaticImageData } from 'next/image';
+import { Url } from "next/dist/shared/lib/router/router";
 
 
 export interface NavigationLink {
@@ -49,8 +50,15 @@ export interface ButtonProps {
   extraClassName?: string;
   onSubmit?: (event: React.FormEvent<HTMLButtonElement>) => void;
   content: string;
-  href: string;
 }
+
+export interface SyntaxLinkProps {
+  id?: string;
+  extraClassName?: string;
+  content: string;
+  href?: any
+}
+
 
 export interface BasicInputProps {
   id?: string;

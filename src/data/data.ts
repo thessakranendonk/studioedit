@@ -13,6 +13,7 @@ export const SERVICES ={
   academic_editing: {
     slogan: "Get the right level of academic editing for your needs, from structural support to final polish",
     copyediting_proofreading: {
+      title: "Copyediting & Proofreading",
       subtext: "Ideal for drafts that are structurally complete but need polish to read smoothly and clearly. This level ensures your writing is error-free,  clear, precise, and ready for submission or publication.",
       items: {
           "Clarity & Flow": [
@@ -25,18 +26,36 @@ export const SERVICES ={
             "Ensure consistent tone, style, and terminology throughout"
           ],
           "Formatting & Style": [
-            "Apply light formatting adjustments (headings, bullets, minor layout issues)"
+            "Apply light formatting adjustments (headings, bullets, minor layout issues)", "Final quality check to catch overlooked errors before submission"
           ],
-          "Final Quality Check": [
-            "Final quality check to catch overlooked errors before submission"
-          ]
         },
-      starting_rate: "$0.05 per word or $55/hour",
+      starting_rate: "$0.03 per word or $40/hour",
       final_pricing: ""
     },
     structural_developmental: {
+      title: "Structural & Developmental Editing",
       subtext: "Ideal for early or mid-stage drafts or for writers seeking support with overall structure and coherence. Deep, conceptual editing to develop and strengthen your argument, organization, and clarity.",
-      starting_rate: "$0.03 per word or $40/hour",
+      items: {
+  "Argument & Logic": [
+    "Clarify and strengthen main claims",
+    "Identify gaps or unsupported points",
+    "Improve flow and persuasiveness"
+  ],
+  "Organization & Structure": [
+    "Reorganize chapters, sections, or paragraphs for coherence",
+    "Enhance transitions and narrative flow"
+  ],
+  "Content & Reader Guidance": [
+    "Identify missing content or redundancies",
+    "Clarify aims, research questions, and evidence integration",
+    "Improve readability and highlight potential confusion"
+  ],
+  "Citation & Formatting Support": [
+    "Ensure accurate citations and references in APA, MLA, Chicago, etc.",
+    "Align layout with journal or university templates, including headings, tables, figures, and appendices"
+  ]
+},
+      starting_rate: "$0.05 per word or $55/hour",
       final_rate: ""
     },
   },

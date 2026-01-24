@@ -14,7 +14,7 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
   const pathname = usePathname();
 
   const navigationLinks: Array<NavigationLink> = [
-    { name: "SERVICES", href: "/services", dropdown: [
+    { name: "SERVICES", href: "/#services", dropdown: [
       { name: "Academic Editing", href: "/services/academic-editing" },
       { name: "Professional Editing", href: "/services/professional-editing" },
       {name: "Creative Editing", href: "/services/creative-editing" },] },

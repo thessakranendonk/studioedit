@@ -3,8 +3,6 @@
 import LinkCard from "@/src/components/ui/LinkCard";
 import { RiDoubleQuotesL, RiQuillPenAiFill, RiQuillPenAiLine  } from "react-icons/ri";
 import { HiLightBulb, HiOutlineLightBulb  } from "react-icons/hi";
-// import { MdCamera, MdOutlineCamera } from "react-icons/md";
-// import DentalOffer from "@/components/DentalOffer";
 import { HiOutlineAcademicCap, HiAcademicCap,  } from "react-icons/hi2";
 import Hero from "@/src/components/Hero";
 import { useAnimation, motion } from "framer-motion";
@@ -19,7 +17,7 @@ const iconClassName = "w-24 h-24 text-[#0b3330]";
 
 const HomePageLinks = [
   {
-    href: "/academic-editing",
+    href: "/services/academic-editing",
     name: "Academic Editing",
     information:
       "Clearer structure, stronger arguments,and polished scholarly writing fordissertations, manuscripts, and articles",
@@ -28,7 +26,7 @@ const HomePageLinks = [
     hoverIcon: <HiOutlineAcademicCap className={iconClassName} />,
   },
   {
-    href: "/professional-editing",
+    href: "/services/professional-editing",
     name: "Professional Editing",
     information:
       "Effective messaging and precise communication for speeches, presentations, and grant proposals",
@@ -37,7 +35,7 @@ const HomePageLinks = [
     hoverIcon: <RiQuillPenAiLine  className={iconClassName} />,
   },
   {
-    href: "/creative-editing",
+    href: "/services/creative-editing",
     name: "Creative Editing",
     information:
       "Refined narrative, vibrant characters, and immersive storytelling for fiction, nonfiction, and screenplays",
@@ -92,7 +90,7 @@ I offer academic, professional, and creative editing services designed to help y
 
 
           </p></div>
-          <h2 className="text-2xl md:text-3xl font-medium text-[#0b3330] text-center tracking-widest mb-6 underline underline-offset-4 md:mt-20">SERVICES</h2>
+          <h2 id="services" className="text-2xl md:text-3xl font-medium text-[#0b3330] text-center tracking-widest mb-6 underline underline-offset-4 md:mt-20">SERVICES</h2>
        <motion.div
         ref={ref}
         viewport={{ once: true }}

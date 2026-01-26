@@ -6,7 +6,6 @@ import Header from "../src/components/layout/project-layout/Header";
 import "./globals.css";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
-import path from "path";
 
 
 export default function ProjectLayout({ children }: { children: React.ReactNode }) {

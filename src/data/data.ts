@@ -116,7 +116,30 @@ export const SERVICES ={
   creative_editing: {
     slogan: "Polish your fiction, nonfiction, or script with clearer structure, stronger voice, and greater reader impact",
     creative_writing: {
+    title: "Creative Writing",
+    subtext: "Ideal for authors and screenwriters seeking clear, professional feedback on story development, structure, and style while preserving their creative voice.",
+    items: {
+  "Fiction Editing (Short Stories · Novellas · Novels)": [
+    "Strengthening story structure, plot flow, pacing, and tension",
+    "Enhancing character development, motivation, arcs, and emotional depth",
+    "Refining voice and tone while preserving the author’s style",
+    "Optional line-level feedback for clarity, rhythm, and impact",
+    "Reviewing thematic cohesion, world-building, and overall narrative shape"
+  ],
+  "Screenplay & Script Editing (Screenplays · Stage Plays)": [
+    "Providing structural guidance on scene progression, beats, and dramatic tension",
+    "Tightening dialogue and clarifying character voice",
+    "Strengthening visual storytelling and pacing for audience impact",
+    "Ensuring formatting and style meet industry standards"
+  ],
+  "Nonfiction Editing (Memoirs · Essays · Articles · Creative Nonfiction)": [
+    "Structuring content for logical flow, clarity, and reader engagement",
+    "Refining voice, tone, and narrative style to match purpose and audience",
+    "Enhancing argumentation, clarity, and persuasive impact",
+    "Fact-checking guidance and maintaining accuracy where relevant",
+    "Ensuring consistency in structure, headings, and overall readability"
+  ]
+},
       starting_rate: "$0.05/word or $55/hour",
       final_rate: "Final pricing depends on scope, genre, and level of collaboration."
-  }}
-}
+  }}}

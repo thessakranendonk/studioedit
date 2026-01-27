@@ -1,4 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+
 @import "tailwindcss";
+
+.shape-circle {
+  float: right;
+  width: 14.5rem;
+  height: 14.5rem;
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+  brightness: 105%;
+
+  shape-outside: circle(50%);
+  clip-path: circle(50%);
+
+  background: url('/images/Judy.webp') center 30% / cover no-repeat;
+  transform: translateX(.75rem);
+  filter: brightness(1.08) saturate(0.91) hue-rotate(-3deg);
+
+
+  margin-top: 2rem;
+}
+
+
 
 @theme {
   /* =========================
@@ -12,6 +36,12 @@
   --color-brand-dark: #082a28;
   --color-brand-darkest: #051d1b;
   --color-brand-highlight: #c58210
+
+   /* =========================
+   * FONTS
+   * ========================= */
+  --font-monteserrat: "Montserrat", sans-serif;
+  --font-bungee: "Bungee", sans-serif;
 
   /* =========================
    * CLIP PATHS

@@ -13,7 +13,7 @@ export interface ServiceHeadingProps {
 const ServiceHeading: React.FC<ServiceHeadingProps> = ({ title, slogan, pageAnchorLinks }) => {
   return (
     <AnimateOnScroll customVariants={slideInLeftSlow}>
-        <h1 className="text-6xl text-brand-base tracking-wider text-shadow-sm pl-25 pt-20 mt-25">
+        <h1 className="text-6xl text-brand-lighter tracking-wider text-shadow-lg font-[Bungee] pl-25 pt-20 mt-25">
           {title}
         </h1>
 

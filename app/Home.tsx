@@ -194,7 +194,7 @@ const HomePageLinks = [
 const Home: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
   return (
-    <div>
+    <div className=''>
       <Hero />
 
       {/* INTRO */}

@@ -19,7 +19,8 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
       {name: "Creative Editing", href: "/services/creative-editing" },] },
 
     { name: "MY PHILOSOPHY", href: "/my-philosophy" },
-    { name: "REQUEST QUOTE", href: "/request-quote" },
+    { name: "WHY NOT USE A.I.?", href: "/why-not-use-ai" },
+    { name: "RESOURCES", href: "/resources" },
   ];
 
   return (
@@ -33,9 +34,9 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
         //  logoClassName="sm:w-3/5 sm:ml-8 md:w-3/4 h-auto ml-2 mt-2 mr-1"
         logoClassName="w-100% h-auto ml-2 mt-2 mr-1"
          hoverClassName={clsx(
-           "flex hover:font-semibold bg-left-bottom hover:text-brand-lightest hover:bg-gradient-to-r hover:from-brand-lightest/40 hover:to-brand-darkest bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
+           "flex hover:font-semibold bg-left-bottom hover:text-brand-lighter hover:bg-gradient-to-r hover:from-brand-lightest hover:to-brand-darkest bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
          )}
-         activeLinkClassName="text-indigo-800 font-normal lg:text-md font-light underline underline-offset-8 decoration-1 decoration-[#c58210]"
+         activeLinkClassName="text-brand-lightest font-semibold lg:text-md font-light underline underline-offset-4 decoration-2 decoration-brand-base"
     />
         <main className="flex-1">{children}</main>
        <Footer navigationLinks={navigationLinks} />

@@ -16,12 +16,14 @@ interface AnimateOnScrollProps {
   children: ReactNode;
   customVariants?: Variants;
   extraClassName?: string;
+  extraVariants?: Variants;
 }
 
 const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
   children,
   customVariants,
   extraClassName,
+  extraVariants
 }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -45,7 +47,7 @@ const AnimateOnScroll: React.FC<AnimateOnScrollProps> = ({
       initial="hidden"
       animate={controls}
       className={extraClassName}
-      variants={customVariants || animationVariants}
+      variants={customVariants || animationVariants || extraVariants}
     >
       {children}
     </motion.div>

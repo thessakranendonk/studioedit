@@ -45,15 +45,15 @@ const [values, setValues] = useState<Record<string, string>>({});
       
  
     <PageHeading heading="Request a Quote" />
-    <h2 className="max-w-lg mx-auto mt-10 font-semibold text-sm/6 text-brand-highlight">Contact Details</h2>
+    <h2 className="max-w-lg mx-auto mt-10 font-semibold text-lg text-brand-lightest font-[Bungee]">Contact Details</h2>
     <div className="grid grid-cols-2 gap-2 space-y-4 p-8 mx-auto max-w-xl text-sm/6 font-semibold text-zinc-600">
     <InputField id={"firstname"} label={"First Name*"} name={"firstname"} type={"text"} required={true} showError={isInvalid("firstname")} onChange={(e) => handleFieldChange("firstname", e.target.value)} />
     <InputField id={"lastname"} label={"Last Name*"} name={"lastname"} type={"text"} required={true} showError={isInvalid("lastname")} onChange={(e) => handleFieldChange("lastname", e.target.value)} />
     <PhoneInput showError={isInvalid("phone")} onChange={(e) => handleFieldChange("phone", e.target.value)}/>
     <InputField id={"email"} label={"Email*"} name={"email"} type={"email"} required={true} showError={isInvalid("email")} onChange={(e) => handleFieldChange("email", e.target.value)} />
     <RadioButton content={"How would you like to be contacted?"} extraClassName="flex" options={[{"label":"Phone", "id":"contact-method-phone"}, {"label":"Video", "id":"contact-method-video"}]} name="contactmethod" showError={isInvalid("contactmethod")} onChange={(e) => handleFieldChange("contactmethod", e.target.value)} />
- 
-        <h2 className="col-span-2 max-w-lg text-sm/6 mt-10 font-semibold text-brand-highlight">Project Details</h2>
+
+        <h2 className="col-span-2 max-w-lg text-lg mt-10 font-semibold text-brand-lightest font-[Bungee]">Project Details</h2>
     <Dropdown id={"style"} label={"What style guide should I use?"} name={"style"} options={["APA", "MLA", "Chicago", "Harvard", "IEEE", "Journal-specific guidelines", "Not sure", "Other, please describe below"]} showError={isInvalid("style")} onChange={(e) => handleFieldChange("style", e.target.value)} />
     <Dropdown id={"deliverable"} label={"What is the expected deliverable?"} name={"deliverable"} options={["Proofread copy", "Structural edit", "Polished final version", "Tracked-changes file", "Annotated comments", "Not sure", "Other, please describe below"]} showError={isInvalid("deliverable")} onChange={(e) => handleFieldChange("deliverable", e.target.value)}/>
         <div className="col-span-2">
@@ -73,7 +73,7 @@ const [values, setValues] = useState<Record<string, string>>({});
             {isInvalid("work-description") && <p className={labelErrorClass}>This field is required</p>}
           </div>
           <DocUpload id={"file-upload"} type={"file"} content={"Upload a file"} label={"Please upload any relevant files"} description={"Doc, Docx, or Txt up to 10MB"} />
-          <Button id="submit-button" type="submit" content="Submit" extraClassName={clsx("col-span-1 mt-8 rounded-md bg-brand-base text-center text-sm/6 font-semibold text-white hover:bg-brand-highlight focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600")} />
+          <Button id="submit-button" type="submit" content="Submit" extraClassName={clsx("bg-brand-base px-8 my-10 py-2 text-lg text-white hover:text-brand-base hover:shadow-[inset_20rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base font-[Bungee]")} />
     </div>
     </form>
     </div>

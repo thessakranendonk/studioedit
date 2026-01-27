@@ -1,14 +1,11 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { MdOutlineArrowRightAlt } from 'react-icons/md';
-import { motion } from 'framer-motion';
 
 import AnimateOnScroll from '@/src/components/AnimateOnScroll';
 import SyntaxLink from '@/src/components/ui/inputs/SyntaxLink';
 import { SERVICES } from '@/src/data/data';
-import { bounceRightOnHover, slideInLeftSlow, slideInRightSlow, slideInUpSoft } from '@/src/styles/animations';
+import { slideInLeftSlow, slideInRightSlow, slideInUpSoft } from '@/src/styles/animations';
 import ServiceSection from '@/src/components/ui/ServiceSection';
 import ServiceHeading from '@/src/components/ui/ServiceHeading';
 
@@ -33,7 +30,7 @@ const AcademicEditing: React.FC = () => {
         items={copyediting.items}
         animation={slideInRightSlow}
         id="copywriting-proofreading"
-        imageUrl="bg-[url('/images/computer.jpg')]"
+        imageUrl="bg-[url('/images/books.jpg')] bg-center bg-fit bg-no-repeat brightness-90 hue-rotate-[-25deg]"
         imgLocation="left"
         imageHeight="h-170"
       />
@@ -45,7 +42,7 @@ const AcademicEditing: React.FC = () => {
         items={structural.items}
         animation={slideInLeftSlow}
         id="structural-developmental-editing"
-        imageUrl="bg-[url('/images/computer.jpg')]"
+        imageUrl="bg-[url('/images/computer.jpg')] bg-cover bg-top"
         imgLocation="right"
         imageHeight="h-200"
       />

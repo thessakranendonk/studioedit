@@ -29,6 +29,10 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
+       fontFamily: {
+        futura: ['Bungee', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
+      },
       zIndex: {
         60: '60',
         70: '70',

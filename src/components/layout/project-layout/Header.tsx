@@ -1,7 +1,6 @@
 'use client'
 
 import HamburgerIcon from "@/src/components/ui/icons/HamburgerIcon";
-import Button from "@/src/components/ui/inputs/Button";
 import { HeaderProps } from "../../../../types/component-types";
 import { Popover, PopoverPanel, PopoverButton, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/24/outline";
@@ -11,6 +10,9 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import LogoAnimation from "@/src/components/LogoAnimation";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "../../../../public/images/STGreen.png";
+import AnimateOnScroll from "../../AnimateOnScroll";
+import { slideInUpSoft } from "@/src/styles/animations";
+import SyntaxLink from "../../ui/inputs/SyntaxLink";
 
 
 export function useOnClickOutside<T extends HTMLElement>(
@@ -386,7 +388,7 @@ const DesktopNavBar: React.FC<
                               {link.dropdown?.map((droplink) => (
                                 <li
                                   key={droplink.name}
-                                  className="first:mb-2 last:pb-0 border-b-2 border-zinc-100 last:border-none"
+                                  className="first:mb-2 last:pb-0 border-b-2 border-zinc-200/50 last:border-none"
                                 >
                                   <Link
                                     href={droplink.href}
@@ -454,13 +456,20 @@ const Header: React.FC<HeaderProps> = ({
       </div>
       <div className="flex">
         <div className="sm:flex lg:hidden mt-1">
-          <Button
+          {/* <Button
             extraClassName={clsx(""
             )}
             type="button"
             content="BOOK NOW"
             href="/new-appointment"
-          />
+          /> */}
+            <AnimateOnScroll customVariants={slideInUpSoft}>
+                  <div className="flex justify-center mt-3">
+                    <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest">
+                      Request Quote
+                    </SyntaxLink>
+                  </div>
+                </AnimateOnScroll>
         </div>
         <Popover className="lg:hidden">
           {({ open, close }) => (
@@ -516,14 +525,21 @@ const Header: React.FC<HeaderProps> = ({
         />
       </div>
       <div className="hidden lg:flex">
-        <Button
+        {/* <Button
           extraClassName={clsx(
             "bg-brand-base px-8 text-sm h-12 mt-1 mr-2 text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base"
           )}
           type="button"
           content="BOOK NOW"
           href="/new-appointment"
-        />
+        /> */}
+          <AnimateOnScroll customVariants={slideInUpSoft}>
+        <div className="flex justify-center mt-3">
+          <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-brand px-8 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base">
+            Request Quote
+          </SyntaxLink>
+        </div>
+      </AnimateOnScroll>
       </div>
     </header>
   );

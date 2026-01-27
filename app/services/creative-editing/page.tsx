@@ -19,7 +19,7 @@ const CreativeEditing: React.FC = () => {
         subtext={SERVICES.creative_editing.creative_writing.subtext}
         items={SERVICES.creative_editing.creative_writing.items}
         animation={slideInRightSlow}
-        imageUrl="bg-[url('/images/computer.jpg')]"
+        imageUrl="bg-[url('/images/books-plant.jpg')] bg-bottom"
         imgLocation="left"
         imageHeight="h-200">
          </ServiceSection>

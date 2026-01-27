@@ -1,6 +1,6 @@
 'use client'
 import Button from "@/src/components/ui/inputs/Button";
-import { FooterProps, NavigationLink } from "../../../../types/component-types";
+import { FooterProps } from "../../../../types/component-types";
 import clsx from "clsx";
 import Link from "next/link";
 import {
@@ -10,11 +10,13 @@ import {
   AiOutlinePhone,
 } from "react-icons/ai";
 import LogoAnimation from "@/src/components/LogoAnimation";
-// import { CLINIC_DETAILS, HOURS } from "../../../../data/clinic-data";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineContactPhone } from "react-icons/md";
 import { CONTACT_DETAILS } from "@/src/data/data";
 import logo from "../../../../public/images/STGreen.png";
+import AnimateOnScroll from "../../AnimateOnScroll";
+import { slideInUpSoft } from "@/src/styles/animations";
+import SyntaxLink from "../../ui/inputs/SyntaxLink";
 
 
 const iconClassName = "mt-1 mr-2 w-4 h-4 text-white";
@@ -126,16 +128,13 @@ const ClinicContact = () => {
             {CONTACT_DETAILS.address}
           </a>
         </div>
-        <div className="w-full justify-center hidden md:flex">
-          <Button
-            extraClassName={clsx(
-              "bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest"
-            )}
-            type="button"
-            content="Request Quote"
-            href="/request-quote"
-          />
+        <AnimateOnScroll customVariants={slideInUpSoft}>
+        <div className="flex justify-center mt-3">
+          <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest">
+            Request Quote
+          </SyntaxLink>
         </div>
+      </AnimateOnScroll>
       </div>
     </div>
   );

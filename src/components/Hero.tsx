@@ -69,7 +69,7 @@ const Hero: React.FC = () => {
         <div className="absolute inset-0 z-10">
           <div className="w-full absolute top-2/3 left-1/2 md:top-1/2 md:left-1/2 md:mt-10 transform -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="flex flex-col items-center text-center">
-              <h1 className="text-2xl uppercase md:text-6xl font-medium tracking-widest text-white py-4 md:mb-10 text-shadow-xl shadow-white">
+              <h1 className="text-3xl uppercase md:text-6xl font-medium tracking-widest text-white py-4 md:mb-10 text-shadow-xl shadow-white">
                 Syntax Studio
               </h1>
 

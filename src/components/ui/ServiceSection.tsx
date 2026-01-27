@@ -21,7 +21,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ title, subtext, items, 
           className="grid md:grid-cols-2 lg:w-screen mx-auto mt-10 text-brand-base mb-10 bg-zinc-200/30"
         >
             { imgLocation === 'left' && 
-              <div className={clsx("md:w-full mx-auto bg-cover bg-center bg-no-repeat", imageUrl, imageHeight)} />
+              <div className={clsx("md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
             }
 
           <div>
@@ -54,7 +54,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ title, subtext, items, 
             ))}
           </div>
             { imgLocation === 'right' &&
-          <div className={clsx("md:w-full mx-auto bg-cover bg-center bg-no-repeat", imageUrl, imageHeight)} />
+          <div className={clsx("md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
             }
           </div>
       </AnimateOnScroll>

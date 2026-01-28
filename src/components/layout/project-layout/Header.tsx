@@ -224,7 +224,7 @@ const MenuLinks: React.FC<
                             "flex flex-col"
                           )}
                         >
-                          <Link
+                          <a
                             href={item.href}
                             onClick={onLinkClick}
                             className={clsx(
@@ -241,7 +241,7 @@ const MenuLinks: React.FC<
                             )}
                           >
                             {item.name}
-                          </Link>
+                          </a>
                         </motion.div>
                       ))}
                     </div>
@@ -294,7 +294,7 @@ const DesktopNavBar: React.FC<
         return (
           <li key={link.name}>
             {!link.dropdown ? (
-              <Link
+              <a
                 href={link.href}
                 className={clsx(
                   currentActiveLocation?.includes(link.href)
@@ -310,7 +310,7 @@ const DesktopNavBar: React.FC<
                 }}
               >
                 <span className={clsx(hoverClassName)}>{link.name}</span>
-              </Link>
+              </a>
             ) : (
               <Popover as="div" className="h-full">
                 {({ close, open }) => (
@@ -332,7 +332,7 @@ const DesktopNavBar: React.FC<
                       <PopoverButton
                         className={clsx(textClassName, linkClassName)}
                       >
-                        <Link className={hoverClassName} href={link.href}>
+                        <a className={hoverClassName} href={link.href}>
                           {link.name}
 
                           {link.dropdown && (
@@ -347,7 +347,7 @@ const DesktopNavBar: React.FC<
                               aria-hidden="true"
                             />
                           )}
-                        </Link>
+                        </a>
                       </PopoverButton>
                     </div>
                     <Transition
@@ -390,14 +390,14 @@ const DesktopNavBar: React.FC<
                                   key={droplink.name}
                                   className="first:mb-2 last:pb-0 border-b-2 border-zinc-200/50 last:border-none"
                                 >
-                                  <Link
+                                  <a
                                     href={droplink.href}
                                     className={textClassName}
                                   >
                                     <span className={hoverClassName}>
                                       {droplink.name}
                                     </span>
-                                  </Link>
+                                  </a>
                                 </li>
                               ))}
                             </>

@@ -34,7 +34,7 @@ export interface HeaderProps {
 
 export interface LinkCardProps {
   href: string;
-  image: string | StaticImageData;
+  image?: string | StaticImageData;
   name: string;
   information: string;
   icon?: JSX.Element;

@@ -64,13 +64,13 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
         <ul className="flex flex-col mx-auto text-md gap-y-6 font-light text-white mt-4">
           {navigationLinks.map((link) => (
             <li key={link.name}>
-              {link.name !== "FORMS" ? (
+              {/* {link.name !== "FORMS" ? (
                 <div className="hover:font-medium">
                   <Link href={link.href}>
                     {link.name}
                   </Link>
                 </div>
-              ) : (
+              ) : ( */}
                 <ul className="flex flex-col text-md gap-y-2">
                   {link.dropdown?.map((drop) => (
                     <li key={drop.name} className="hover:font-medium">
@@ -80,7 +80,8 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
                     </li>
                   ))}
                 </ul>
-              )}
+              {/* ) */}
+              {/* } */}
             </li>
           ))}
         </ul>

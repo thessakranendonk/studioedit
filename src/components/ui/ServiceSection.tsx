@@ -5,7 +5,7 @@ export interface ServiceSectionProps {
     title: string
     subtext?: string
     items: Record<string, string[]>
-    animation: any
+    animation?: any
     id?: string
     imageUrl?: string
     imgLocation?: 'left' | 'right'
@@ -25,7 +25,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ title, subtext, items, 
             }
 
           <div>
-            <h2 className="text-4xl text-center font-semibold tracking-wider text-brand-darkest text-shadow-sm pt-20">
+            <h2 className="text-4xl text-center font-semibold tracking-wider text-brand-base text-shadow-sm pt-20">
               {title}
             </h2>
 

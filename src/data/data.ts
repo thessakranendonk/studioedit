@@ -110,7 +110,7 @@ export const SERVICES ={
               "Checking consistency and polishing titles, headings, summaries, and supporting materials"
             ]
           },
-      starting_rate: "$800 per proposal",
+      starting_rate: "$600 per proposal",
       final_rate: "Final pricing depends on scope, timeline, and level of research."
   }},
   creative_editing: {

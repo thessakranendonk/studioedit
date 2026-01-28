@@ -1,9 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
-import type { Metadata } from 'next'
 import { mdxComponents } from '@/src/components/mdxComponents';
-import { serialize } from 'v8';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
@@ -17,12 +15,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { content, data } = matter(fileContents);
 
-  const mdxSource = await serialize(content);
-
   return (
     <article className="prose mx-auto py-10 mt-30">
       <h1>{data.title}</h1>
-      <MDXRemote source={mdxSource} components={mdxComponents} />
+      <MDXRemote source={content} components={mdxComponents} />
     </article>
   );
 }

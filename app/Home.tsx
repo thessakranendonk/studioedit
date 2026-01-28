@@ -52,7 +52,7 @@ const Home: React.FC = () => {
   const [isInView, setIsInView] = useState(false);
   return (
     <div className=''>
-      <Hero />
+      <Hero title="Syntax Studio" subtitle="Human Editing for Work That Matters." heightClassName='h-[22rem] md:h-[36rem] lg:h-[40rem]' />
 
       {/* INTRO */}
       <AnimateOnScroll>

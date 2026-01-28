@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
+import matter from 'gray-matter';
+import ResourcesList from '@/src/components/ResourcesList';
+import PageHeading from '@/src/components/ui/PageHeading';
 
 const CONTENT_DIR = path.join(process.cwd(), 'content/resources');
 
@@ -8,21 +10,28 @@ export const runtime = 'nodejs';
 
 export default function ResourcesIndex() {
   const files = fs.readdirSync(CONTENT_DIR).filter((f) => f.endsWith('.mdx'));
-  const posts = files.map((file) => ({
-    slug: file.replace(/\.mdx$/, ''),
-  }));
+
+  const posts = files.map((file) => {
+    const filePath = path.join(CONTENT_DIR, file);
+    const source = fs.readFileSync(filePath, 'utf8');
+    const { data } = matter(source);
+
+    return {
+      slug: file.replace(/\.mdx$/, ''),
+      title: data.title ?? file.replace(/\.mdx$/, ''),
+      subtext: data.subtext ?? '',
+      date: data.date ?? null,
+      keywords: data.keywords ?? [],
+    };
+  });
 
   return (
-    <main className="max-w-3xl mx-auto py-16">
-      <h1 className="text-3xl font-semibold mb-8">Resources</h1>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/resources/${post.slug}`}>{post.slug}</Link>
-          </li>
-        ))}
-      </ul>
-    </main>
+    <div className="w-screen mx-auto my-30">
+      {/* <PageHeading heading="Resources" /> */}
+
+      <ResourcesList posts={posts} />
+
+
+    </div>
   );
 }
-

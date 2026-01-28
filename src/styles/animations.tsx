@@ -1,4 +1,4 @@
-import { Easing, MotionProps } from 'framer-motion';
+import { Easing, MotionProps, Variants } from 'framer-motion';
 
 {/* SLIDE IN UP ANIMATIONS */}
 export const slideInUpSoft = {
@@ -152,10 +152,22 @@ export const rotateScaleIn = {
 };
 
 
-{/* BOUNCE ANIMATIONS */}
+{/* HOVER ANIMATIONS */}
 export const bounceRightOnHover: MotionProps = {
   whileHover: {
      x: [0, 6, 3, 6, 0],
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1] as Easing,
+    },
+  },
+} as const;
+
+
+export const showOnHover: Variants = {
+  initial: { opacity: 0 },
+  hover: {
+    opacity: 1,
     transition: {
       duration: 0.5,
       ease: [0.25, 0.1, 0.25, 1] as Easing,

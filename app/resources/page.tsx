@@ -27,7 +27,6 @@ export default function ResourcesIndex() {
 
   return (
     <div className="w-screen mx-auto my-30">
-      {/* <PageHeading heading="Resources" /> */}
 
       <ResourcesList posts={posts} />
 

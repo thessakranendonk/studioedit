@@ -297,9 +297,7 @@ const DesktopNavBar: React.FC<
               <Link
                 href={link.href}
                 className={clsx(
-                  currentActiveLocation?.includes(link.href)
-                    ? activeLinkClassName
-                    : linkClassName,
+                  linkClassName,
                   textClassName,
                   "text-center lg:text-left",
                   "flex flex-col"
@@ -335,6 +333,7 @@ const DesktopNavBar: React.FC<
                         <Link className={hoverClassName} href={link.href}>
                           {link.name}
 
+                          {/* Dropdown Arrow */}
                           {link.dropdown && (
                             <ChevronUpIcon
                               className={clsx(
@@ -455,22 +454,22 @@ const Header: React.FC<HeaderProps> = ({
         )}
       </div>
       <div className="flex">
+
+        {/* MOBILE MENU */}
+
         <div className="sm:flex lg:hidden mt-1">
-          {/* <Button
-            extraClassName={clsx(""
-            )}
-            type="button"
-            content="BOOK NOW"
-            href="/new-appointment"
-          /> */}
+
+          {/* REQUEST QUOTE BUTTON */}
             <AnimateOnScroll customVariants={slideInUpSoft}>
                   <div className="flex justify-center mt-3">
-                    <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-darkest px-8 mt-3 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest">
+                    <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-base px-2 md:px-8 mt-3 py-2 text-xs md:text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-darkest md:border-brand-lightest">
                       Request Quote
                     </SyntaxLink>
                   </div>
                 </AnimateOnScroll>
         </div>
+
+        {/* HAMBURGER MENU */}
         <Popover className="lg:hidden">
           {({ open, close }) => (
             <>
@@ -512,6 +511,8 @@ const Header: React.FC<HeaderProps> = ({
           )}
         </Popover>
       </div>
+
+      {/* DESKTOP MENU */}
       <div className="hidden lg:inline-flex mt-3">
         <DesktopNavBar
           navigationLinks={navigationLinks}
@@ -525,17 +526,11 @@ const Header: React.FC<HeaderProps> = ({
         />
       </div>
       <div className="hidden lg:flex">
-        {/* <Button
-          extraClassName={clsx(
-            "bg-brand-base px-8 text-sm h-12 mt-1 mr-2 text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base"
-          )}
-          type="button"
-          content="BOOK NOW"
-          href="/new-appointment"
-        /> */}
+   
+        {/* REQUEST QUOTE BUTTON */}
           <AnimateOnScroll customVariants={slideInUpSoft}>
         <div className="flex justify-center mt-3">
-          <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-brand px-8 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base">
+          <SyntaxLink content="REQUEST QUOTE" href="/request-quote" extraClassName="bg-brand-base  px-8 py-2 text-sm text-white hover:text-brand-base hover:shadow-[inset_15rem_0_0_0] hover:shadow-white duration-[400ms] transition-[color,box-shadow] rounded-lg border-2 border-brand-base">
             Request Quote
           </SyntaxLink>
         </div>

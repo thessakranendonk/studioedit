@@ -92,7 +92,7 @@ const FooterMenu: React.FC<Pick<FooterProps, "navigationLinks">> = ({
 
 const ClinicContact = () => {
   return (
-    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-lightest bg-brand-base">
+    <div className="flex flex-col justify-between border-t-8 md:border-none border-brand-base bg-brand-base">
       <FooterHeading
         title="CONTACT"
         icon={<MdOutlineContactPhone className={iconClassName} />}

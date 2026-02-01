@@ -16,7 +16,9 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
     { name: "SERVICES", href: "/#services", dropdown: [
       { name: "Academic Editing", href: "/services/academic-editing" },
       { name: "Professional Editing", href: "/services/professional-editing" },
-      {name: "Creative Editing", href: "/services/creative-editing" },] },
+      {name: "Creative Editing", href: "/services/creative-editing" },
+      { name: "Writing", href: "/services/writing-services" },
+    ] },
 
     { name: "MY PHILOSOPHY", href: "/my-philosophy" },
     { name: "WHY NOT USE A.I.?", href: "/why-not-use-ai" },

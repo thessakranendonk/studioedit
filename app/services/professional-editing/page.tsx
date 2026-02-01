@@ -65,7 +65,8 @@ const ProfessionalEditingService: React.FC = () => {
         id="presentations-speeches"
         imageUrl="bg-[url('/images/presentation2.jpg')] bg-bottom brightness-90"
         imgLocation="left"
-        imageHeight="h-170"
+        imgLocationMobile='left'
+        imageHeight="h-48 md:h-170"
       />
 
       {/* GRANT WRITING */}
@@ -77,7 +78,8 @@ const ProfessionalEditingService: React.FC = () => {
         id="grant-writing"
         imageUrl="bg-[url('/images/grant-writing4.jpg')] bg-contain bg-top"
         imgLocation="right"
-        imageHeight="h-200"
+        imgLocationMobile='left'
+        imageHeight="h-48 md:h-200"
       />
 
 

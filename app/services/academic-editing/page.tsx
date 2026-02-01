@@ -32,7 +32,8 @@ const AcademicEditing: React.FC = () => {
         id="copywriting-proofreading"
         imageUrl="bg-[url('/images/books.jpg')] bg-center bg-fit bg-no-repeat brightness-90 hue-rotate-[-25deg]"
         imgLocation="left"
-        imageHeight="h-170"
+        imgLocationMobile='left'
+        imageHeight="h-48 md:h-170"
       />
 
       {/* STRUCTURAL / DEVELOPMENTAL */}
@@ -44,7 +45,8 @@ const AcademicEditing: React.FC = () => {
         id="structural-developmental-editing"
         imageUrl="bg-[url('/images/computer.jpg')] bg-cover bg-top"
         imgLocation="right"
-        imageHeight="h-200"
+        imgLocationMobile='left'
+        imageHeight="h-48 md:h-200"
       />
 
       {/* REQUEST QUOTE BUTTON */}

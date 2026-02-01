@@ -77,7 +77,7 @@ const Home: React.FC = () => {
       <AnimateOnScroll>
         <h2
           id="services"
-          className="text-2xl md:text-3xl font-medium text-[#0b3330] text-center tracking-widest mb-6 underline underline-offset-4 md:mt-20"
+          className="text-3xl md:text-3xl font-medium text-brand-base tracking-widest text-center mb-6 underline underline-offset-4 md:mt-20"
         >
           SERVICES
         </h2>
@@ -102,7 +102,7 @@ const Home: React.FC = () => {
         ________________
       </p>
 
-      <h1 className="text-center uppercase font-medium text-2xl md:text-3xl xl:text-4xl mt-14 md:mt-24 tracking-widest text-[#0b3330]">
+      <h1 className="text-center uppercase font-medium text-2xl md:text-3xl mt-14 md:mt-24 tracking-widest text-brand-base underline underline-offset-4">
         Client Testimonials
       </h1>
 

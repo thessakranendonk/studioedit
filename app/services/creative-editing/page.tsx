@@ -19,10 +19,11 @@ const CreativeEditing: React.FC = () => {
         subtext={SERVICES.creative_editing.creative_writing.subtext}
         items={SERVICES.creative_editing.creative_writing.items}
         animation={slideInRightSlow}
-        imageUrl="bg-[url('/images/books-plant.jpg')] bg-bottom"
+        imageUrl="bg-[url('/images/books-plant.jpg')] bg-[50%_75%]"
         imgLocation="left"
-        imageHeight="h-200">
-         </ServiceSection>
+        imgLocationMobile='left'
+        imageHeight="h-48 md:h-200"/>
+       
 
          {/* REQUEST QUOTE BUTTON */}
       <AnimateOnScroll customVariants={slideInUpSoft}>

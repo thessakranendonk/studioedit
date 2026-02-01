@@ -13,11 +13,11 @@ export interface ServiceHeadingProps {
 const ServiceHeading: React.FC<ServiceHeadingProps> = ({ title, slogan, pageAnchorLinks }) => {
   return (
     <AnimateOnScroll customVariants={slideInLeftSlow}>
-        <h1 className="text-6xl text-brand-lighter tracking-wider text-shadow-lg font-[Bungee] pl-25 pt-20 mt-25">
+        <h1 className="text-2xl md:text-6xl text-brand-lighter tracking-wider text-shadow-lg font-[Bungee] pl-10 md:pl-25 pt-20 mt-25">
           {title}
         </h1>
 
-        <p className="pl-25 pt-6 text-xl italic text-shadow-sm mb-10">
+        <p className="max-w-[350px] md:max-w-[500px] lg:max-w-[700px] pl-10 md:pl-25 pt-6 text-md md:text-xl italic text-shadow-sm mb-10">
           {slogan}
         </p>
 
@@ -30,7 +30,7 @@ const ServiceHeading: React.FC<ServiceHeadingProps> = ({ title, slogan, pageAnch
             >
               <Link
                 href={link.href}
-                className="flex ml-25 text-md font-lighter text-brand-darkest/50 hover:text-brand-darkest"
+                className="flex ml-10 md:ml-25 text-md font-lighter text-brand-darkest/50 hover:text-brand-darkest"
               >
                 {link.title}
                 <MdOutlineArrowRightAlt className="mt-2 ml-1" />

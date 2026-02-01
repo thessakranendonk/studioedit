@@ -9,34 +9,38 @@ export interface ServiceSectionProps {
     id?: string
     imageUrl?: string
     imgLocation?: 'left' | 'right'
+    imgLocationMobile?: 'left' | 'right'
     imageHeight?: string
     children?: React.ReactNode | any
 }
 
-const ServiceSection: React.FC<ServiceSectionProps> = ({ title, subtext, items, animation, id, imageUrl, imgLocation, imageHeight, children }) => {
+const ServiceSection: React.FC<ServiceSectionProps> = ({ title, subtext, items, animation, id, imageUrl, imgLocation, imgLocationMobile,imageHeight, children }) => {
   return (
 <AnimateOnScroll customVariants={animation}>
         <div
           id={id}
-          className="grid md:grid-cols-2 lg:w-screen mx-auto mt-10 text-brand-base mb-10 bg-zinc-200/30"
+          className="md:grid md:grid-cols-2 lg:w-screen mx-auto mt-10 text-brand-base mb-10 pb-10 md:pb-0 bg-zinc-200/30"
         >
             { imgLocation === 'left' && 
-              <div className={clsx("md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
+              <div className={clsx("hidden md:inline-block md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
+            }
+            { imgLocationMobile === 'left' && 
+              <div className={clsx("md:hidden md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
             }
 
           <div>
-            <h2 className="text-4xl text-center font-semibold tracking-wider text-brand-base text-shadow-sm pt-20">
+            <h2 className="text-2xl md:text-4xl text-center font-semibold tracking-wider text-brand-base text-shadow-sm pt-10 md:pt-20">
               {title}
             </h2>
 
-            <p className="md:max-w-xl mx-auto text-brand-base pt-5 text-center">
+            <p className="max-w-[325px] md:max-w-xl mx-auto text-brand-base pt-5 text-center">
               {subtext}
             </p>
 
             {Object.entries(
               items
             ).map(([section, points]) => (
-              <div key={section} className="mt-5 pl-30">
+              <div key={section} className="mt-5 pl-10 md:pl-30">
                 <h3 className="text-lg font-semibold text-brand-darkest mb-3">
                   {section}
                 </h3>
@@ -54,7 +58,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({ title, subtext, items, 
             ))}
           </div>
             { imgLocation === 'right' &&
-          <div className={clsx("md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
+          <div className={clsx("hidden md:inline-block md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
+            }
+            { imgLocationMobile === 'right' &&
+          <div className={clsx("md:hidden md:w-full mx-auto bg-cover bg-no-repeat", imageUrl, imageHeight)} />
             }
           </div>
       </AnimateOnScroll>

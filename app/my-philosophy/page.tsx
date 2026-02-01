@@ -1,18 +1,20 @@
 'use client';
 import AnimateOnScroll from '@/src/components/AnimateOnScroll';
 import SyntaxLink from '@/src/components/ui/inputs/SyntaxLink';
-import { slowFadeIn, fadeIn, slideInUpSoft, slideInLeftSlow, slideInRightSlow } from '@/src/styles/animations';
+import { fadeIn, slideInUpSoft, slideInLeftSlow, slideInRightSlow } from '@/src/styles/animations';
 
 
 const MyPhilosophy: React.FC = () => {
   return (
 
     <div className='flex flex-col mt-30 max-w-7xl mx-auto'>
-      <div className='flex gap-8 bg-brand-base/5 inset-shadow-brand-base p-10 rounded-lg mb-15'>
-      <AnimateOnScroll customVariants={fadeIn}>
-      <h1 className='text-5xl font-semibold text-brand-base text-right  mt-10 font-[Bungee]'>Judy Ehrentraut pHd</h1>
+<div className="grid grid-cols-1 md:grid-cols-4 gap-8 bg-brand-base/5 inset-shadow-brand-base p-10 rounded-lg mb-15">
+
+      <AnimateOnScroll customVariants={fadeIn} extraClassName='md:col-span-1'>
+        <h1 className='text-3xl md:text-2xl lg:text-4xl font-semibold text-brand-base text-center md:text-right mt-5 font-[Bungee]'>Judy Ehrentraut pHd</h1>
          </AnimateOnScroll>
-          <AnimateOnScroll
+      <AnimateOnScroll
+          extraClassName='md:col-span-3'
                   customVariants={{
                     ...slideInUpSoft,
                     visible: {
@@ -25,14 +27,13 @@ const MyPhilosophy: React.FC = () => {
                     }
                   }}
                 >
-         <p className="mb-3 mt-10 text-lg text-brand-base leading-7">
+         <p className="mb-3 md:mt-5 text-lg text-brand-base leading-7 text-center md:text-left">
             <b><i>"Editing isn’t just about fixing errors, it’s about developing writers."</i></b><br></br>I approach every project as a collaboration: you bring your ideas, and I help you express them in their clearest, strongest form. Whether you’re preparing a dissertation, a grant proposal, or a short story, you’ll receive <i>thoughtful, individualized feedback</i>  designed to polish your current project and <i>help you grow as a writer.</i>    
         </p>
-        </AnimateOnScroll>
+      </AnimateOnScroll>
       </div>
-    
 
-<div className="grid grid-cols-2 gap-8">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[350px] md:max-w-5xl mx-auto text-brand-base ">
     <AnimateOnScroll 
     customVariants={{
                     ...slideInLeftSlow,
@@ -47,7 +48,7 @@ const MyPhilosophy: React.FC = () => {
                   }}
     
     >
-    <h1 className="text-3xl mt-10 font-semibold tracking-widest mb-6 underline underline-offset-4">
+    <h1 className="text-3xl mt-10 font-semibold text-center md:text-left tracking-widest mb-6 underline underline-offset-4">
       About Me
     </h1>
     <div className="block">
@@ -73,7 +74,7 @@ const MyPhilosophy: React.FC = () => {
                   }}
     
    extraClassName='ml-4'>
-<h1 className="text-3xl mt-10 font-semibold tracking-widest mb-6 underline underline-offset-4">Areas of Expertise</h1>
+<h1 className="text-3xl mt-10 font-semibold text-center md:text-left tracking-widest mb-6 underline underline-offset-4">Areas of Expertise</h1>
          <p className="text-md mt-10">I help writers, researchers, and students present their work with clarity, precision, and confidence. I’m not an editing mill — I work directly with every client myself. That means communication and edits tailored to your goals, discipline, and writing voice.
       </p>
        <p className="text-md py-6" >My editorial practice is informed by teaching and research in:</p>

@@ -47,10 +47,10 @@ const ResourcesList: React.FC<{ posts: Post[] }> = ({ posts }) => {
       {/* Background */}
       <div className="absolute inset-0 z-0 bg-[url('/images/Hero9.png')] bg-cover bg-no-repeat bg-top" />
         <AnimateOnScroll customVariants={fadeIn}>
-        <PageHeading heading="Resources" extraClassName='relative z-10 pt-10 text-white  font-[bungee]'/>
+        <PageHeading heading="Resources" extraClassName='relative z-10 pt-10 text-white font-[bungee]'/>
         </AnimateOnScroll>
       {/* Content */}
-      <ul className="relative z-10 max-w-md mx-auto grid gap-6 py-20 lg:ml-100">
+      <ul className="relative z-10 max-w-[325px] md:max-w-md mx-auto grid gap-6 py-10 md:py-20 lg:ml-100">
         {sortedPosts.map((post) => (
                 <AnimateOnScroll customVariants={slideInLeftSlow} key={post.slug}>
 
@@ -61,8 +61,8 @@ const ResourcesList: React.FC<{ posts: Post[] }> = ({ posts }) => {
             whileHover="hover"
             animate="rest"
           >
-              <Link href={`/resources/${post.slug}`} className="text-brand-base w-full grid grid-cols-4">
-            <div className="col-span-3">
+              <Link href={`/resources/${post.slug}`} className="text-brand-base w-full grid grid-cols-5">
+            <div className="col-span-4">
               {/* <AnimateOnHover> */}
                 <p className="text-sm text-gray-500">{formatDate(post.date)}</p>
                 <p className="text-3xl font-semibold py-3 text-shadow-md hover:italic">{post.title}</p>

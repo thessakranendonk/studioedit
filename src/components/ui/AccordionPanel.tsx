@@ -1,163 +1,160 @@
 import { PropsWithChildren, useCallback, useEffect, useRef, useState } from 'react'
 import { useSpring, animated, config } from '@react-spring/web'
 import clsx from 'clsx'
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Disclosure } from '@headlessui/react'
+import { FaChevronDown   } from 'react-icons/fa'
 
-import { FaChevronDown } from "react-icons/fa";
+/* =========================
+   Types
+========================= */
 
 export interface AccordionPanelProps {
   title: string
   subtext?: string
   listitems?: string[]
+  index: number
+  openIndex: number | null
+  setOpenIndex: (index: number | null) => void
 }
 
-export interface AccordionPanelBodyProps extends AccordionPanelProps {
+interface AccordionPanelBodyProps {
+  title: string
   open: boolean
+  onToggle: () => void
 }
 
-/**
- * Inner AccordionPanel body with react-spring animation that responds to the `open` prop.
- */
-export const AccordionPanelBody: React.FC<PropsWithChildren<AccordionPanelBodyProps>> = ({ title, open, children }) => {
+/* =========================
+   AccordionPanelBody
+========================= */
+
+export const AccordionPanelBody: React.FC<
+  PropsWithChildren<AccordionPanelBodyProps>
+> = ({ title, open, onToggle, children }) => {
   const cleanupRef = useRef<(() => void) | null>(null)
-  const [contentHeight, setContentHeight] = useState<number>(0)
+  const [contentHeight, setContentHeight] = useState(0)
 
-  const callbackRef = useCallback((node: HTMLDivElement) => {
-    // div hidden or deps array changed so check if we need to clean up
-    if (cleanupRef.current !== null) {
-      cleanupRef.current()
-      cleanupRef.current = null
-    }
+  const callbackRef = useCallback((node: HTMLDivElement | null) => {
+    if (cleanupRef.current) cleanupRef.current()
 
-    // accordion body shown or deps array change so re-observe and reset cleanup
-    if (node !== null) {
+    if (node) {
       const observer = new ResizeObserver(([entry]) => {
         requestAnimationFrame(() => {
-          if (!entry) {
-            return
-          }
           setContentHeight(entry.target.getBoundingClientRect().height)
         })
       })
 
       observer.observe(node)
-
-      // stash cleanup function in a ref for the next time this callback ref is invoked
-      cleanupRef.current = () => {
-        observer.disconnect()
-      }
+      cleanupRef.current = () => observer.disconnect()
     }
   }, [])
 
-  // not fully sure if required or not however careful cleanup can't hurt
-  useEffect(() => {
-    return () => {
-      if (cleanupRef.current !== null) {
-        cleanupRef.current()
-        cleanupRef.current = null
-      }
-    }
-  }, [])
+  useEffect(() => () => cleanupRef.current?.(), [])
 
-  const expand = useSpring({
-    height: open ? contentHeight : 0,
-    // config: { friction: 5 },
-    // if we land on a good spring... opacity: open ? 1 : 0,
-    config: {
-      ...config.default,
-    },
-  })
+const expand = useSpring({
+  height: open ? contentHeight : 0,
+  opacity: open ? 1 : 0,           // subtle fade for smoother feel
+  config: { tension: 250, friction: 25 }, // softer spring
+  marginTop: open ? 5 : 0,
+  marginBottom: open ? 10 : 0,
+    transform: open ? 'translateY(0px)' : 'translateY(-5px)',
 
-  const spin = useSpring({
-    config: { friction: 20 },
-    transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-  })
+})
+
+//   const spin = useSpring({
+//     transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
+//     config: { friction: 20 },
+//   })
+
+const verticalBar = useSpring({
+  transform: open ? 'scaleY(0)' : 'scaleY(1)',
+  opacity: open ? 0 : 1,
+  config: { tension: 260, friction: 18 },
+})
 
   return (
     <div>
-      <h3 className="accordion-heading not-prose text-white leading-none mt-0 mb-0">
-        {/* <DisclosureButton
-          className={clsx(
-            'flex justify-between items-center w-full px-4 py-3 border-2 group text-left',
-            'font-normal leading-none',
-            'text-white border-brand-base hover:border-brand-base/10 bg-brand-lighter hover:bg-brand-lighter-outline',
-            'transition-all duration-150 ease-in',
-            'focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-brand-orange/20 focus-visible:border-transparent',
-            open ? 'rounded-t-md' : 'rounded-md',
-          )}
-        >
-          <span>{title}</span>
-          <animated.div style={spin}>
-            <FaChevronDown
-              className={clsx('w-6 h-6 mt-0.5 text-brand-base/25 group-hover:text-brand-base/60', {
-                // 'rotate-180': open,
-                // '': !open,
-              })}
-            />
-          </animated.div>
-        </DisclosureButton>
-      </h3>
-      <DisclosurePanel as={animated.div} style={expand}>
-        <div
-          ref={callbackRef}
-          className="accordion-body bg-white px-4 pt-4 pb-2 rounded-b-md border-2 border-t-0 border-brand-base/10"
-        >
-          {children}
-        </div>
-      </DisclosurePanel> */}
+      {/* NORMAL BUTTON — NOT Disclosure.Button */}
+      <button
+        type="button"
+        onClick={onToggle}
+        className={clsx(
+          'flex justify-between items-center w-full px-4 py-3 border-t-[1.5px] group text-left',
+          'font-medium font-[Montserrat] hover:bg-brand-base/5 leading-none',
+          'text-brand-base text-xl border-brand-base/10',
+          open ? 'bg-brand-base/5 border-b-[1.5px]' : '',
+        )}
+      >
+        <span>{title}</span>
+        {/* <animated.div style={spin}>
+          <FaChevronDown className="w-6 h-6 text-brand-base/25 group-hover:text-brand-base/60" />
+        </animated.div> */}
+        
 
-<DisclosureButton
-          className={clsx(
-            'flex justify-between items-center w-full px-4 py-3 border-t-2 group text-left',
-            'font-normal hover:font-medium leading-none',
-            'text-brand-base text-xl border-brand-base/10',
-            'transition-all duration-150 ease-in',
-            'focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-brand-base/20 focus-visible:border-transparent',
-            // open ? 'rounded-t-md' : 'rounded-md',
-          )}
-        >
-          <span>{title}</span>
-          <animated.div style={spin}>
-            <FaChevronDown
-              className={clsx('w-6 h-6 mt-0.5 text-brand-base/25 group-hover:text-brand-base/60', {
-                // 'rotate-180': open,
-                // '': !open,
-              })}
-            />
-          </animated.div>
-        </DisclosureButton>
-      </h3>
-      <DisclosurePanel as={animated.div} style={expand}>
-        <div
-          ref={callbackRef}
-          className="accordion-body bg-white px-4 pt-4 pb-2 rounded-b-md "
-        >
-          {children}
-        </div>
-      </DisclosurePanel>
+<div className="relative w-5 h-5">
+  {/* horizontal bar (always visible) */}
+  <div className="absolute top-1/2 left-0 w-full h-[2px] bg-brand-base/40 -translate-y-1/2" />
 
-      
+  {/* vertical bar (animates in/out) */}
+  <animated.div
+    style={verticalBar}
+    className="absolute left-1/2 top-0 h-full w-[2px] bg-brand-base/40 -translate-x-1/2 origin-center"
+  />
+</div>
+
+      </button>
+
+      {open && (
+  <animated.div style={expand}>
+    <div
+      ref={callbackRef}
+      className="accordion-body bg-white px-4 pt-4 pb-2 font-[Montserrat] text-brand-base/90 text-md"
+    >
+      {children}
+    </div>
+  </animated.div>
+)}
     </div>
   )
 }
 
-/**
- * Animated accordion component that expands/collapses to show/hide content when the header is clicked on.
- */
-export const AccordionPanel: React.FC<PropsWithChildren<AccordionPanelProps>> = ({ title, subtext, listitems, children }) => {
+/* =========================
+   AccordionPanel
+========================= */
+
+export const AccordionPanel: React.FC<
+  PropsWithChildren<AccordionPanelProps>
+> = ({
+  title,
+  subtext,
+  listitems,
+  index,
+  openIndex,
+  setOpenIndex,
+  children,
+}) => {
+  const isOpen = openIndex === index
+
   return (
     <Disclosure as="div" className="accordion w-full">
-      {({ open }) => (
-        <AccordionPanelBody title={title} open={open}>
-            <p><i>{subtext}</i></p>
-            <ul className="list-disc list-inside mt-4 mb-4">
-              {listitems?.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-          {children}
-        </AccordionPanelBody>
-      )}
+      <AccordionPanelBody
+        title={title}
+        open={isOpen}
+        onToggle={() =>
+          setOpenIndex(isOpen ? null : index)
+        }
+      >
+        {subtext && <p><i>{subtext}</i></p>}
+
+        {listitems && (
+          <ul className="list-disc list-inside mt-4 mb-4">
+            {listitems.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+        )}
+
+        {children}
+      </AccordionPanelBody>
     </Disclosure>
   )
 }

@@ -3,6 +3,7 @@ import { NavigationLink } from "../types/component-types";
 import clsx from "clsx";
 import Footer from "../src/components/layout/project-layout/Footer";
 import Header from "../src/components/layout/project-layout/Header";
+// @ts-ignore
 import "./globals.css";
 import { useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation'
@@ -14,15 +15,13 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
 
   const navigationLinks: Array<NavigationLink> = [
     { name: "SERVICES", href: "/#services", dropdown: [
-      { name: "Academic Editing", href: "/services/academic-editing" },
-      { name: "Professional Editing", href: "/services/professional-editing" },
-      {name: "Creative Editing", href: "/services/creative-editing" },
+      { name: "Editing", href: "/services/editing-services" },
       { name: "Writing", href: "/services/writing-services" },
     ] },
 
-    { name: "MY PHILOSOPHY", href: "/my-philosophy" },
-    { name: "WHY NOT USE A.I.?", href: "/why-not-use-ai" },
-    { name: "RESOURCES", href: "/resources" },
+    { name: "About Me", href: "/my-philosophy" },
+    { name: "Reflections", href: "/resources" },
+    { name: "A.I. in Writing", href: "/why-not-use-ai" },
   ];
 
   return (

@@ -56,14 +56,9 @@ const expand = useSpring({
   config: { tension: 250, friction: 25 }, // softer spring
   marginTop: open ? 5 : 0,
   marginBottom: open ? 10 : 0,
-    transform: open ? 'translateY(0px)' : 'translateY(-5px)',
+  transform: open ? 'translateY(0px)' : 'translateY(-5px)',
 
 })
-
-//   const spin = useSpring({
-//     transform: open ? 'rotate(180deg)' : 'rotate(0deg)',
-//     config: { friction: 20 },
-//   })
 
 const verticalBar = useSpring({
   transform: open ? 'scaleY(0)' : 'scaleY(1)',
@@ -78,17 +73,13 @@ const verticalBar = useSpring({
         type="button"
         onClick={onToggle}
         className={clsx(
-          'flex justify-between items-center w-full px-4 py-3 border-t-[1.5px] group text-left',
-          'font-medium font-[Montserrat] hover:bg-brand-base/5 leading-none',
-          'text-brand-base text-xl border-brand-base/10',
-          open ? 'bg-brand-base/5 border-b-[1.5px]' : '',
+          'flex justify-between items-center w-full px-4 py-3 group text-left',
+        'font-bold font-[Montserrat] leading-none',
+        'text-white text-2xl',
+        open ? 'bg-brand-base/8 rounded-md' : '',
         )}
       >
-        <span>{title}</span>
-        {/* <animated.div style={spin}>
-          <FaChevronDown className="w-6 h-6 text-brand-base/25 group-hover:text-brand-base/60" />
-        </animated.div> */}
-        
+        <span className="text-[21px] font-bold text-brand-base hover:text-brand-base/80">{title}</span>
 
 <div className="relative w-5 h-5">
   {/* horizontal bar (always visible) */}
@@ -104,10 +95,15 @@ const verticalBar = useSpring({
       </button>
 
       {open && (
-  <animated.div style={expand}>
+  <animated.div 
+  style={{
+    ...expand,
+    overflow: 'hidden',
+  }}
+  >
     <div
       ref={callbackRef}
-      className="accordion-body bg-white px-4 pt-4 pb-2 font-[Montserrat] text-brand-base/90 text-md"
+      className="accordion-body bg-white px-4 pt-4 pb-2 font-[Montserrat] text-brand-base/90 text-md rounded-md"
     >
       {children}
     </div>
@@ -135,18 +131,18 @@ export const AccordionPanel: React.FC<
   const isOpen = openIndex === index
 
   return (
-    <Disclosure as="div" className="accordion w-full">
+    <div className="accordion gap-2">
       <AccordionPanelBody
         title={title}
         open={isOpen}
         onToggle={() =>
-          setOpenIndex(isOpen ? null : index)
-        }
+            setOpenIndex(isOpen ? null : index)
+          }
       >
-        {subtext && <p><i>{subtext}</i></p>}
+        {subtext && <p className="text-sm text-brand-base/90"><i>{subtext}</i></p>}
 
         {listitems && (
-          <ul className="list-disc list-inside mt-4 mb-4">
+          <ul className="list-disc list-outside text-md pl-4 mt-4 mb-4 rounded-md">
             {listitems.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
@@ -155,6 +151,6 @@ export const AccordionPanel: React.FC<
 
         {children}
       </AccordionPanelBody>
-    </Disclosure>
+    </div>
   )
 }

@@ -19,8 +19,8 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
       { name: "Writing", href: "/services/writing-services" },
     ] },
 
-    { name: "About Me", href: "/my-philosophy" },
-    { name: "Reflections", href: "/resources" },
+    { name: "About Me", href: "/about-me" },
+    { name: "Reflections", href: "/reflections" },
     { name: "A.I. in Writing", href: "/why-not-use-ai" },
   ];
 

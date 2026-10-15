@@ -55,9 +55,14 @@ const MyPhilosophy: React.FC = () => {
       <div className="shape-circle"></div>
 
       <p className="mb-3 mt-10">
-                    I have been drawn to reading and writing from an early age, a passion that shaped my commitment to clear expression and critical thinking. I earned a BA (Honours) in English Literature from the University of Toronto, an MA in English Literature from Carleton University, and a PhD in English and Digital Design from the University of Waterloo. Throughout graduate school, I worked as a private tutor and later spent six years teaching academic writing and media and literature courses at the University of Waterloo.<br></br><br></br> <br></br>For over a decade, I have provided grant writing support to start-up companies and helped  teams secure development and production funding by translating their ideas into clear, compelling proposals. I have also offered content creation and concept development, experiences that inform the collaborative, holistic approach I bring to editing.       
+                    I’m Judy, a native English speaker with over 15 years of experience editing across professional and academic  subject areas. I hold a BA in English Literature from the University of Toronto, an MA in English Literature from Carleton University, and a PhD in English and Digital Design from the University of Waterloo. 
 
       </p>
+      <p className="text-md mt-10">I’ve worked in a range of creative and editorial roles, including writing grants and proposals, public speaking, editing both fiction and nonfiction manuscripts, and presenting research at conferences. I have also successfully secured government funding for small Canadian startup media companies.
+      </p>
+      <p className="text-md mt-10">In my role as a professor, I’ve developed courses that teach undergraduate students how to become stronger writers and researchers. I’ve also worked in writing centres supporting students through one-on-one collaboration. 
+
+</p>
     </div>
   </AnimateOnScroll>
 <AnimateOnScroll 

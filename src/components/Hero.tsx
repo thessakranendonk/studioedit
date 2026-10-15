@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle, extraClassName, heightClas
   return (
     <div className="relative">
       <img
-        src="/images/hero9.png"
+        src="/images/Hero9.png"
         className={clsx("w-full z-0 object-scale-down object-bottom md:object-cover md:object-top lg:object-center contrast-more", heightClassName)}
         alt="Syntax Studio Edit"
       />

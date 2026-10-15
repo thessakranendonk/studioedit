@@ -1,8 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { AccordionPanel } from "@/src/components/ui/AccordionPanel";
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+
 
 const WritingServices: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -42,53 +41,52 @@ const WritingServices: React.FC = () => {
         </div>
       </div>
       <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 ml-5 p-3 shadow-md">
-      <AccordionPanel
-        index={0}
-        openIndex={openIndex}
-        setOpenIndex={setOpenIndex}
-        title="Research & Proposal Development"
-        subtext="Focuses on strategic context and funder alignment."
-        listitems={[
-          "Reviews funder priorities, mission, and past awards",
-          "Identifies relevant trends, gaps, and best practices (environmental scan)",
-          "Clarifies the problem statement, objectives, and scope",
-          "Develops overall proposal structure and narrative flow",
-          "Aligns approach, methods, and anticipated outcomes"
-        ]}
-      />
-
-      <AccordionPanel
-        index={1}
-        openIndex={openIndex}
-        setOpenIndex={setOpenIndex}
-        title="Writing & Persuasive Framing"
-        subtext="Focuses on clarity and reviewer-centered argument."
-        listitems={[
-          "Drafts and revises proposal sections as needed",
-          "Refines rationale, significance, and demonstrated need",
-          "Aligns language with funder priorities and evaluation criteria",
-          "Clarifies outcomes, deliverables, and broader impacts",
-          "Strengthens summaries and key persuasive sections"
-        ]}
-      >
-      </AccordionPanel>
-
-      <AccordionPanel
-        index={2}
-        openIndex={openIndex}
-        setOpenIndex={setOpenIndex}
-        title="Technical Editing & Formatting"
-        subtext="Focuses on precision and submission readiness."
-        listitems={[
-          "Improves sentence-level clarity, tone, and consistency",
-          "Refines budgets, timelines, and work plans for coherence",
-          "Ensures consistent terminology and professional register",
-          "Confirms compliance with guidelines, templates, and limits",
-          "Reviews formatting, headings, and supporting materials"
-        ]}
-      >
-      </AccordionPanel>
-
+          <AccordionPanel
+            index={0}
+            openIndex={openIndex}
+            setOpenIndex={setOpenIndex}
+            title="Research & Proposal Development"
+            subtext="Focuses on strategic context and funder alignment."
+            listitems={[
+              "Reviews funder priorities, mission, and past awards",
+              "Identifies relevant trends, gaps, and best practices (environmental scan)",
+              "Clarifies the problem statement, objectives, and scope",
+              "Develops overall proposal structure and narrative flow",
+              "Aligns approach, methods, and anticipated outcomes"
+            ]}
+          />
+    
+          <AccordionPanel
+            index={1}
+            openIndex={openIndex}
+            setOpenIndex={setOpenIndex}
+            title="Writing & Persuasive Framing"
+            subtext="Focuses on clarity and reviewer-centered argument."
+            listitems={[
+              "Drafts and revises proposal sections as needed",
+              "Refines rationale, significance, and demonstrated need",
+              "Aligns language with funder priorities and evaluation criteria",
+              "Clarifies outcomes, deliverables, and broader impacts",
+              "Strengthens summaries and key persuasive sections"
+            ]}
+          >
+          </AccordionPanel>
+    
+          <AccordionPanel
+            index={2}
+            openIndex={openIndex}
+            setOpenIndex={setOpenIndex}
+            title="Technical Editing & Formatting"
+            subtext="Focuses on precision and submission readiness."
+            listitems={[
+              "Improves sentence-level clarity, tone, and consistency",
+              "Refines budgets, timelines, and work plans for coherence",
+              "Ensures consistent terminology and professional register",
+              "Confirms compliance with guidelines, templates, and limits",
+              "Reviews formatting, headings, and supporting materials"
+            ]}
+          >
+          </AccordionPanel>
       </div>
       </div>
       </div>

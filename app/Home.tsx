@@ -23,26 +23,18 @@ const iconClassName = 'w-24 h-24 text-[#0b3330]';
 
 const HomePageLinks = [
   {
-    href: '/services/academic-editing',
-    name: 'Academic Editing',
+    href: '/services/editing-services',
+    name: 'Editing',
     information:
-      'Clearer structure, stronger arguments, and polished scholarly writing for dissertations, manuscripts, and articles',
-    icon: <HiAcademicCap className={iconClassName} />,
-    hoverIcon: <HiOutlineAcademicCap className={iconClassName} />,
-  },
-  {
-    href: '/services/professional-editing',
-    name: 'Professional Editing',
-    information:
-      'Effective messaging and precise communication for speeches, presentations, and grant proposals',
+      'Careful editing for clarity, consistency, flow, and professional presentation, with attention to style, tone, and readability',
     icon: <RiQuillPenAiFill className={iconClassName} />,
     hoverIcon: <RiQuillPenAiLine className={iconClassName} />,
   },
   {
-    href: '/services/creative-editing',
-    name: 'Creative Editing',
+    href: '/services/writing-services',
+    name: 'Writing',
     information:
-      'Refined narrative, vibrant characters, and immersive storytelling for fiction, nonfiction, and screenplays',
+      'Clear, compelling writing for proposals, grants, reports, presentations, and academic projects',
     icon: <HiLightBulb className={iconClassName} />,
     hoverIcon: <HiOutlineLightBulb className={iconClassName} />,
   },
@@ -98,22 +90,22 @@ const Home: React.FC = () => {
       </AnimateOnScroll>
 
       {/* TESTIMONIALS */}
-      <p className="text-center font-extrabold text-brand-base mt-32">
+      {/* <p className="text-center font-extrabold text-brand-base mt-32">
         ________________
-      </p>
+      </p> */}
 
-      <h1 className="text-center uppercase font-medium text-2xl md:text-3xl mt-14 md:mt-24 tracking-widest text-brand-base underline underline-offset-4">
+      {/* <h1 className="text-center uppercase font-medium text-2xl md:text-3xl mt-14 md:mt-24 tracking-widest text-brand-base underline underline-offset-4">
         Client Testimonials
-      </h1>
+      </h1> */}
 
       <div className="bg-zinc-200 relative mx-auto mt-24">
-        <div className="relative max-w-md flex justify-center mx-auto">
+        {/* <div className="relative max-w-md flex justify-center mx-auto">
           <div className="absolute max-w-md mx-auto text-[4rem] z-20 pt-4">
             <AnimateOnScroll customVariants={rotateScaleIn}>
               <RiDoubleQuotesL className="text-brand-lightest border border-brand-lighter rounded-full bg-white" />
             </AnimateOnScroll>
           </div>
-        </div>
+        </div> */}
 
         <div className="max-w-4xl transform skew-y-[12deg] lg:rounded-xl mx-auto bg-brand-lighter/20 bg-clip-content bg-gradient-to-tr from-brand-lighter via-brand-base to-brand-lighter">
           <div className="transform -skew-y-[12deg] mb-24">

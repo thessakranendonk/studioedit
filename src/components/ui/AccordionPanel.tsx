@@ -12,6 +12,7 @@ export interface AccordionPanelProps {
   title: string
   subtext?: string
   listitems?: string[]
+  bestFor?: string
   index: number
   openIndex: number | null
   setOpenIndex: (index: number | null) => void
@@ -123,6 +124,7 @@ export const AccordionPanel: React.FC<
   title,
   subtext,
   listitems,
+  bestFor,
   index,
   openIndex,
   setOpenIndex,
@@ -148,6 +150,8 @@ export const AccordionPanel: React.FC<
             ))}
           </ul>
         )}
+
+        {bestFor && <p className="text-sm text-brand-base/90"><strong>Best for:</strong> {bestFor}</p>}
 
         {children}
       </AccordionPanelBody>

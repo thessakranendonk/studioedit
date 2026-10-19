@@ -7,12 +7,12 @@ import { slideInLeftQuick, slideInUpSoft, slowFadeIn } from "@/src/styles/animat
 
 const WhyNotUseAI: React.FC = () => {  
     return (
-        <div className="mt-30">
+        <div className="mt-30 md:mx-10">
             <AnimateOnScroll customVariants={slideInLeftQuick}>
                 <ServiceHeading title="Why Not Use A.I.?" />
             </AnimateOnScroll>
               <AnimateOnScroll customVariants={slowFadeIn}>
-            <div className="flex max-w-5xl justify-center mx-auto  gap-8 mb-32">
+            <div className="flex max-w-5xl justify-center mx-auto gap-8 mb-32">
           
                 <ServiceBlock title="When to Use A.I.?" items={{
     "What A.I. is useful for:": [

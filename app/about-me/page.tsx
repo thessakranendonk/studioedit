@@ -33,7 +33,7 @@ const MyPhilosophy: React.FC = () => {
       </AnimateOnScroll>
       </div>
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[350px] md:max-w-5xl mx-auto text-brand-base ">
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[350px] md:max-w-5xl mx-auto text-brand-base md:mx-10">
     <AnimateOnScroll 
     customVariants={{
                     ...slideInLeftSlow,
@@ -41,7 +41,7 @@ const MyPhilosophy: React.FC = () => {
                       ...slideInLeftSlow.visible,
                       transition: {
                         ...slideInLeftSlow.visible.transition,
-                        delay: 5,
+                        delay: 2,
                         duration: 1
                       }
                     }
@@ -72,7 +72,7 @@ const MyPhilosophy: React.FC = () => {
                       ...slideInRightSlow.visible,
                       transition: {
                         ...slideInRightSlow.visible.transition,
-                        delay: 5,
+                        delay: 2,
                         duration: 1
                       }
                     }
@@ -80,10 +80,11 @@ const MyPhilosophy: React.FC = () => {
     
    extraClassName='ml-4'>
 <h1 className="text-3xl mt-10 font-semibold text-center md:text-left tracking-widest mb-6 underline underline-offset-4">Areas of Expertise</h1>
+
          <p className="text-md mt-10">I help writers, researchers, and students present their work with clarity, precision, and confidence. I’m not an editing mill — I work directly with every client myself. That means communication and edits tailored to your goals, discipline, and writing voice.
       </p>
        <p className="text-md py-6" >My editorial practice is informed by teaching and research in:</p>
-       <ul className="list-disc list-inside text-md text-left md:pl-38 lg:pl-20">
+       <ul className="list-disc list-inside text-md text-left md:pl-10 lg:pl-20">
          <li>English literature & literary theory</li>
         <li>Academic writing & reading comprehension</li>
         <li>Creative writing & story development</li>

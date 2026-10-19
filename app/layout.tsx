@@ -37,7 +37,7 @@ export default function ProjectLayout({ children }: { children: React.ReactNode 
          hoverClassName={clsx(
            "flex hover:font-semibold bg-left-bottom hover:text-brand-lighter hover:bg-gradient-to-r hover:from-brand-lightest hover:to-brand-darkest bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out"
          )}
-         activeLinkClassName="text-brand-lightest font-semibold lg:text-md font-light underline underline-offset-4 decoration-2 decoration-brand-base"
+         activeLinkClassName="text-brand-base font-semibold lg:text-md font-light underline underline-offset-4 decoration-2 decoration-brand-base"
     />
         <main className="flex-1">{children}</main>
        <Footer navigationLinks={navigationLinks} />

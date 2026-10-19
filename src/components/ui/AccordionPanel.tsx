@@ -80,7 +80,7 @@ const verticalBar = useSpring({
         open ? 'bg-brand-base/8 rounded-md' : '',
         )}
       >
-        <span className="text-[21px] font-bold text-brand-base hover:text-brand-base/80">{title}</span>
+        <span className="text-[18px] md:text-[21px] font-bold text-brand-base hover:text-brand-base/80">{title}</span>
 
 <div className="relative w-5 h-5">
   {/* horizontal bar (always visible) */}

@@ -11,12 +11,12 @@ const WritingServices: React.FC = () => {
       <h1 className="text-6xl font-bold mb-16 font-[bungee] text-brand-base tracking-wide text-center text-shadow-md">Writing Services</h1>
       <div className="w-full px-10">
         <div className="bg-brand-base/5 p-6 rounded-lg shadow-md pl-10">
-        <h2 className="text-5xl font-extrabold my-5 text-brand-base font-[Montserrat] text-left text-shadow-md">Grants</h2>
-        <p className="text-md text-brand-base/80 font-[Montserrat] text-left mb-5 w-[70%]"><i>
+        <h2 className="text-3xl lg:text-5xl font-extrabold my-5 text-brand-base font-[Montserrat] text-left text-shadow-md">Grants</h2>
+        <p className="text-md text-brand-base/80 font-[Montserrat] text-left mb-5 lg:w-[70%]"><i>
           Grant writing is a multi-step process that integrates research, writing, and revision. I can work independently or in collaboration with project teams. During a free consultation, we can discuss your timeline and research requirements based on the funder and proposal type.
         </i></p>
         </div>
-      <div className="flex justify-between items-start w-full mb-4 mt-20">
+      <div className="md:flex justify-between items-start w-full mb-4 mt-20">
         <div>
           <h3 className="text-2xl font-extrabold mb-4 text-brand-base font-[Montserrat]">Selected Funded Projects</h3>
           <div className="text-md text-brand-base/90 font-[Montserrat] text-left mb-4">
@@ -40,7 +40,7 @@ const WritingServices: React.FC = () => {
               <p><em>Role:</em> collaborative writing, drafting, revision, and final editing</p>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 ml-5 p-3 shadow-md">
+      <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 md:ml-5 p-3 shadow-md">
           <AccordionPanel
             index={0}
             openIndex={openIndex}
@@ -95,11 +95,11 @@ const WritingServices: React.FC = () => {
       <div className="w-full px-10 mb-45">
         <p className="text-2xl font-extrabold text-brand-base/50 my-20 text-center">-----------</p>
         <div className="bg-brand-base/5 p-6 rounded-lg shadow-md pl-10">
-        <h2 className="text-5xl font-extrabold my-5 text-brand-base font-[Montserrat] text-left text-shadow-md">Presentations & Speeches</h2>
-        <p className="text-md text-brand-base/80 font-[Montserrat] text-left mb-5 w-[70%]"><i>
+        <h2 className="text-3xl lg:text-5xl font-extrabold my-5 text-brand-base font-[Montserrat] text-left text-shadow-md">Presentations & Speeches</h2>
+        <p className="text-md text-brand-base/80 font-[Montserrat] text-left mb-5 lg:w-[70%]"><i>
 I research and write presentations and speeches on behalf of individuals and organizations. This service includes content and delivery, not visual design. During a free consultation, we can determine scope, audience, and collaboration level.        </i></p>
         </div>
-      <div className="flex justify-between items-start w-full mb-4 mt-20">
+      <div className="md:flex justify-between items-start w-full mb-4 mt-20">
         <div>
           <h3 className="text-2xl font-extrabold mb-4 text-brand-base font-[Montserrat]">Selected Presentations</h3>
           <div className="text-md text-brand-base/90 font-[Montserrat] text-left mb-4">
@@ -122,7 +122,7 @@ I research and write presentations and speeches on behalf of individuals and org
 </p>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 ml-5 p-3 shadow-md">
+      <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 md:ml-5 p-3 shadow-md">
       <AccordionPanel
         index={0}
         openIndex={openIndex}

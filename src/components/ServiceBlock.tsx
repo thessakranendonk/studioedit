@@ -9,7 +9,7 @@ export interface ServiceBlockProps {
 
 const ServiceBlock: React.FC<ServiceBlockProps> = ({ title, subtext, items, itemsNoKey, starting_rate, final_rate }) => {
   return (
-    <div className="container flex flex-col justify-between mx-auto mt-15 px-10 bg-linear-to-r from-emerald-900/10 via-brand-lighter/5 to-emerald-900/10 bg-opacity-10 p-8 rounded-lg shadow-lg border-1 border-brand-base/10 hover:shadow-2xl transition-shadow duration-300"> 
+    <div className="container flex flex-col justify-between mx-auto mt-8 md:mt-15 px-5 py-8 lg:px-10 bg-linear-to-r from-emerald-900/10 via-brand-lighter/5 to-emerald-900/10 bg-opacity-10 rounded-lg shadow-lg border-1 border-brand-base/10 hover:shadow-2xl transition-shadow duration-300"> 
         <div>
           <h2 className="text-brand-base text-3xl font-semibold text-shadow-lg pb-4 text-center tracking-wider underline underline-offset-4">{title}</h2>
           <p className="text-md mb-6 text-center">{subtext}</p>

@@ -12,12 +12,9 @@ const EditingServices: React.FC = () => {
           <h1 className="text-6xl font-bold mb-16 font-[bungee] text-brand-base tracking-wide text-center text-shadow-md">Editing Services</h1>
           <div className="w-full px-10">
             <div className="bg-brand-base/5 p-6 rounded-lg shadow-md pl-10">
-            <h2 className="text-5xl font-extrabold my-5 text-brand-base font-[Montserrat] text-left text-shadow-md">Dissertations | Manuscripts | Essays | Articles</h2>
-            {/* <p className="text-md text-brand-base/80 font-[Montserrat] text-left mb-5 w-[70%]"><i>
-              Grant writing is a multi-step process that integrates research, writing, and revision. I can work independently or in collaboration with project teams. During a free consultation, we can discuss your timeline and research requirements based on the funder and proposal type.
-            </i></p> */}
+            <h2 className="text-xl md:text-3xl lg:text-5xl font-extrabold my-5 text-brand-base font-[Montserrat] text-left text-shadow-md">Dissertations | Manuscripts | Essays | Articles</h2>
             </div>
-          <div className="flex justify-between items-start w-full mb-4 mt-20">
+          <div className="md:flex justify-between items-start w-full mb-4 mt-20">
             <div>
               {/* <h3 className="text-2xl font-extrabold mb-4 text-brand-base font-[Montserrat]">Selected Funded Projects</h3> */}
               <div className="text-md text-brand-base/90 font-[Montserrat] text-left mb-4 divide-y-22 divide-white">
@@ -28,7 +25,7 @@ const EditingServices: React.FC = () => {
                     <p>Most projects benefit from more than one level of editing. During a free consultation, we can determine which service will best support your work and your goals. </p>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 ml-5 p-3 shadow-md">
+          <div className="mx-auto w-full max-w-lg rounded-xl bg-brand-base/5 divide-y divide-brand-base/10 md:ml-5 p-3 shadow-md">
       
     <AccordionPanel
         index={0}
